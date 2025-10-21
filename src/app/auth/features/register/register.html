@@ -1,0 +1,79 @@
+<div class="cartel">
+    <p-confirmDialog #cd [dismissableMask]="true" [breakpoints]="{'960px': '75vw', '640px': '90vw'}" [closable]="ocurrioError"
+        [draggable]="false" [style]="{'min-width': '400px'}">
+        <ng-template #message let-message>
+            <div class="confirmacion">
+
+                <p class="text-lg font-semibold text-center">
+                    {{ message.message }}
+                </p>
+                <i [ngClass]="message.icon" [style.color]="ocurrioError ? 'red' : 'green'" style="font-size: 3em;"></i>
+            </div>
+
+        </ng-template>
+
+        <ng-template pTemplate="footer">
+            @if(!ocurrioError){
+            <p-button label="Ir al login" class="p-button-success w-full">
+            </p-button>
+            }
+        </ng-template>
+    </p-confirmDialog>
+</div>
+
+
+<section class="register-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <header>
+            <h3>Registrate</h3>
+        </header>
+
+        <div class="form-fields">
+            <p-floatlabel variant="on">
+                <input pInputText id="nombre" autocomplete="off" formControlName="name" />
+                <label for="nombre">Nombre</label>
+            </p-floatlabel>
+
+            <p-floatlabel variant="on">
+                <input pInputText id="apellido" autocomplete="off" formControlName="lastname" />
+                <label for="apellido">Apellido</label>
+            </p-floatlabel>
+
+            <p-floatlabel variant="on">
+                <input pInputText id="direccion" autocomplete="off" formControlName="direccion" />
+                <label for="direccion">Dirección</label>
+            </p-floatlabel>
+
+            <p-floatlabel variant="on">
+                <input pInputText id="email" autocomplete="off" formControlName="email" />
+                <label for="email">Email</label>
+            </p-floatlabel>
+
+            <p-floatlabel variant="on">
+                <p-password inputId="password" [feedback]="false" formControlName="password" />
+                <label for="password">Contraseña</label>
+            </p-floatlabel>
+
+            <p-floatlabel variant="on">
+                <p-password inputId="confirmPassword" [feedback]="false" formControlName="confirmPassword" />
+                <label for="confirmPassword">Confirmar contraseña</label>
+            </p-floatlabel>
+        </div>
+
+        <div class="button-group">
+            <p-button type="submit" label="Registrarse" styleClass="p-button-success w-full" />
+        </div>
+
+        @if(submitted && registerForm.errors){
+        <div class="error">
+            Las contraseñas no coinciden.
+        </div>
+        }
+    </form>
+
+    @if(loading){
+    <div class="loading-overlay">
+        <p-progress-spinner ariaLabel="loading" />
+    </div>
+    }
+</section>

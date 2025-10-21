@@ -1,0 +1,23 @@
+<!-- navbar.component.html -->
+<nav class="navbar">
+  <div class="logo">MiApp</div>
+
+ @if(!isLoggedIn){
+     <div class="nav-buttons">
+    <button (click)="openLogin()" class="btn btn-primary">Iniciar sesión</button>
+    <button [routerLink]="'/auth/sign-up'" class="btn btn-success">Registrarse</button>
+  </div>
+
+  <!-- Menú hamburguesa mobile -->
+  <button class="hamburger" (click)="toggleMobileMenu()">☰</button>
+ }
+</nav>
+
+<!-- Menú mobile -->
+<div class="mobile-menu" [class.show]="mobileMenuVisible">
+  <button (click)="openLogin()" class="btn btn-primary">Iniciar sesión</button>
+  <button [routerLink]="'/auth/sign-up'" class="btn btn-success">Registrarse</button>
+</div>
+
+<!-- Login Modal -->
+<app-login [(visible)]="loginVisible" (visibleChange)="loginVisible = $event"></app-login>

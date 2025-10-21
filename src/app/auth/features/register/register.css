@@ -1,0 +1,99 @@
+.register-container {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f8f9fa;
+}
+
+form {
+    background: white;
+    padding: 2.5rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+header h3 {
+    text-align: center;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.form-fields ::ng-deep .p-float-label {
+    display: block;
+    width: 100%;
+}
+
+.p-floatlabel {
+    margin-top: 15px;
+}
+
+.form-fields ::ng-deep .p-inputtext,
+input {
+    width: 100% !important;
+    padding: 0.75rem !important;
+    font-size: 1rem;
+}
+
+.form-fields ::ng-deep .p-password {
+    width: 100% !important;
+
+}
+
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.button-group ::ng-deep .p-button {
+    font-size: 1rem;
+    height: 2.8rem;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.603);
+    /* overlay semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    border-radius: 10px;
+    /* para que coincida con el formulario */
+}
+
+.confirmacion {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+::ng-deep .p-confirmdialog .p-dialog-content {
+    justify-content: center;
+}

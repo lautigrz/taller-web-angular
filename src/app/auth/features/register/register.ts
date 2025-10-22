@@ -7,27 +7,32 @@ import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validator
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../data-acess/auth.service';
 import { RegisterUser } from '../../models/auth.interface';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmDialogComponent } from "../../../shared/ui/confirm-dialog-component/confirm-dialog-component";
+import { LoadingComponent } from '../../../shared/ui/loading-component/loading-component';
 
 @Component({
   selector: 'app-register',
   imports: [ReactiveFormsModule, CommonModule, ButtonModule,
-    InputTextModule, FloatLabel, PasswordModule, ProgressSpinnerModule,
-    ConfirmDialogModule],
-  providers: [ConfirmationService],
+    InputTextModule, FloatLabel, PasswordModule
+    ,ConfirmDialogComponent, LoadingComponent],
+
   templateUrl: './register.html',
   styleUrl: './register.css'
 })
 export class Register {
 
   registerForm: FormGroup;
+  
   submitted = false;
   loading = false;
   ocurrioError = false;
-  private confirmationService = inject(ConfirmationService)
+  dialogVisible = false;
+  dialogHeader = '';
+  dialogMessage = '';
+  dialogIcon = '';
+
   private authService = inject(AuthService)
+
   constructor(private fb: FormBuilder) {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
@@ -46,36 +51,30 @@ export class Register {
   }
 
   onSubmit() {
-
-    let header = ""
-    let message = ""
-    let icon = ""
-
-
-
+    this.dialogVisible = false;
+    
     if (this.registerForm.valid) {
       this.loading = true;
       const data: RegisterUser = this.registerForm.value;
 
       this.authService.register(data).subscribe({
         next: (user) => {
+          const userName = user.name;
           this.loading = false;
           this.ocurrioError = false;
-          const userName = user.name;
-           header = "Registro exitoso"
-           message = `¡Hola ${userName}, te has registrado correctamente!`
-           icon = "fa-solid fa-circle-check"
-          const esLogin = true
+          this.dialogHeader = "Registro exitoso"
+          this.dialogMessage = `¡Hola ${userName}, te has registrado correctamente!`
+          this.dialogIcon = "fa-solid fa-circle-check"
+          this.dialogVisible = true;
 
-            this.messageInformation(header,message,icon,esLogin)
         },
         error: (err) => {
           this.loading = false;
           this.ocurrioError = true;
-          header = "Ocurrio un error."
-          message = `${err.error.message}`
-          icon = "fa-solid fa-circle-exclamation"
-          this.messageInformation(header,message,icon,false)
+          this.dialogHeader = "Ocurrio un error."
+          this.dialogMessage = `${err.error.message}`
+          this.dialogIcon = "fa-solid fa-circle-exclamation"
+          this.dialogVisible = true;
         }
       })
 
@@ -85,28 +84,6 @@ export class Register {
   get f() {
     return this.registerForm.controls;
   }
-
-  messageInformation(header: string, message: string, icon: string, esLogin: boolean) {
-    this.confirmationService.confirm({
-      header: `${header}`,
-      message: `${message}`,
-      icon: `${icon}`,
-
-      rejectButtonProps: {
-        visible: false
-      },
-
-      acceptButtonProps: {
-        label: 'Ir al login',
-      },
-
-      accept: () => {
-
-
-      },
-    });
-  }
-
 
 
 }

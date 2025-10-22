@@ -16,3 +16,13 @@ export interface LoginUser{
     email: string,
     password: string
 }
+
+export interface MessageEmail{
+    message: string;
+}
+
+export interface UpdatePasswordUser{
+    newPassword: string,
+    confirmPassword: string,
+    token: string
+}

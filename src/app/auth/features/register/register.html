@@ -1,24 +1,13 @@
 <div class="cartel">
-    <p-confirmDialog #cd [dismissableMask]="true" [breakpoints]="{'960px': '75vw', '640px': '90vw'}" [closable]="ocurrioError"
-        [draggable]="false" [style]="{'min-width': '400px'}">
-        <ng-template #message let-message>
-            <div class="confirmacion">
-
-                <p class="text-lg font-semibold text-center">
-                    {{ message.message }}
-                </p>
-                <i [ngClass]="message.icon" [style.color]="ocurrioError ? 'red' : 'green'" style="font-size: 3em;"></i>
-            </div>
-
-        </ng-template>
-
-        <ng-template pTemplate="footer">
-            @if(!ocurrioError){
-            <p-button label="Ir al login" class="p-button-success w-full">
-            </p-button>
-            }
-        </ng-template>
-    </p-confirmDialog>
+    <app-confirm-dialog-component
+    [header]="dialogHeader"
+    [message]="dialogMessage"
+    [icon]="dialogIcon"
+    [visible]="dialogVisible"
+    [esError]="ocurrioError"
+    [closeable]="true"
+    >
+    </app-confirm-dialog-component>
 </div>
 
 
@@ -72,8 +61,6 @@
     </form>
 
     @if(loading){
-    <div class="loading-overlay">
-        <p-progress-spinner ariaLabel="loading" />
-    </div>
+        <app-loading-component></app-loading-component>
     }
 </section>

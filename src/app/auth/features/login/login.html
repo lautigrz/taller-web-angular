@@ -21,7 +21,7 @@
             <label for="on_label">Contraseña</label>
         </p-floatlabel>
 
-        <a href="" class="reset-pass">Olvidaste tu contraseña?</a>
+         <a href="#" class="reset-pass" (click)="abrirModal($event)">¿Olvidaste tu contraseña?</a>
         <div class="flex gap-2 w-full justify-center">
             <p-button label="Iniciar" severity="primary" (click)="onSubmit()" />
         </div>
@@ -32,3 +32,9 @@
     </div>
 
 </p-dialog>
+
+@if(loading){
+    <app-loading-component></app-loading-component>
+}
+
+<app-reset-password [visible]="mostrarModal" (onClose)="cerrarModal()"></app-reset-password>

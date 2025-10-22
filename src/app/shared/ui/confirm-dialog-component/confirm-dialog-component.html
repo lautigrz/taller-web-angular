@@ -1,0 +1,29 @@
+<p-dialog [(visible)]="visible"
+          [closable]="closeable"
+          [dismissableMask]="true"
+          [draggable]="false"
+          [breakpoints]="{'960px': '75vw', '640px': '90vw'}"
+          [style]="{'min-width': '340px'}"
+          (onHide)="cerrarDialog()"
+          >
+
+    <ng-template pTemplate="header">
+         <p>{{header}}</p>
+    </ng-template>
+
+  <ng-template pTemplate="message">
+   
+    <div class="confirmacion">
+      <p class="text-lg font-semibold text-center">{{ message }}</p>
+      <i [ngClass]="icon" [style.color]="esError ? 'red' : 'green'" style="font-size: 3em;"></i>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <p-button *ngIf="mostrarBoton"
+              label="Ir al inicio"
+              class="p-button-success w-full"
+              (click)="aceptar()">
+    </p-button>
+  </ng-template>
+</p-dialog>

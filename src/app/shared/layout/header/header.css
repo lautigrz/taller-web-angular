@@ -3,9 +3,9 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(15, 15, 15, 0.8); 
+  background-color: var(--header-bg);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid #1f2937;
+  border-bottom: 1px solid var(--line-header);
 }
 
 
@@ -26,17 +26,20 @@
 .header-left {
   display: flex;
   align-items: center;
-  margin: 20px;
+  margin: 20px 20px 20px 0;
 }
 
 .name-tienda{
+    color: var(--header-text);
     font-weight: bold !important;
     font-size: 1.2em !important;
+     transition: color 0.3s ease;
 }
 
 .ingresa{
-    color:white;
-    font-size: 0.9em;
+    color: var(--header-text);
+    font-size: 0.8em;
+    transition: color 0.3s ease;
 }
 
 .logo {
@@ -84,30 +87,31 @@
 
 
 
-@media (min-width: 1024px) {
-  .header-content {
-    padding: 0px 4rem;
-  }
-}
+
 
 .search-icon {
   position: absolute;
   left: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  color: #6b7280; 
+  color: var(--header-text);
 }
 
 .search-box input {
   width: 100%;
   padding: 0.5rem 1rem 0.5rem 2.5rem;
-  border: 1px solid #374151; 
+  border: 1px solid rgba(100, 100, 100, 0.562); 
   border-radius: 9999px; 
-  background-color: #111827; 
-  color: white;
+  background-color: var(--header-fondo);
+  color: var(--header-text);
   font-size: 0.875rem;
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
 }
 
 .search-box input:focus {
@@ -128,19 +132,21 @@
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  background-color: #111827; 
+  background-color: var(--header-fondo);
+ 
   border: none;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+
 .action-btn:hover {
-  background-color: #1f2937; 
+ background-color: var(--action-btn-hover);
 }
 
 .action-btn span {
-  color: #d1d5db; 
+  color:var(--header-text); 
 }
 
 

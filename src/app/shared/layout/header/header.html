@@ -26,6 +26,17 @@
                         <span class="material-symbols-outlined">shopping_cart</span>
                         <span class="cart-badge"></span>
                     </label>
+                    <button (click)="toggleTheme()" class="action-btn">
+                        @if (isDark) {
+                        <span class="material-symbols-outlined">
+                            dark_mode
+                        </span>
+                        }@else {
+                        <span class="material-symbols-outlined">
+                            light_mode
+                        </span>
+                        }
+                    </button>
                 </div>
             </div>
         </div>

@@ -1,6 +1,37 @@
-/* navbar.component.css */
+.nav-menu {
+  display: none; 
+}
 
-/* Navbar base */
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+.nav-menu a {
+  font-size: 0.875rem; 
+  font-weight: 500;     
+  color: #d1d5db;       
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #3b82f6; 
+}
+
+.nav-menu a.ofertas {
+  color: #ef4444; 
+}
+
+.nav-menu a.ofertas:hover {
+  color: #f87171;
+}
+
+
+/*
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -15,7 +46,6 @@
   font-weight: bold;
 }
 
-/* Botones navbar */
 .nav-buttons {
   display: flex;
   gap: 1rem;
@@ -39,7 +69,7 @@
   color: white;
 }
 
-/* Hamburger */
+
 .hamburger {
   display: none;
   font-size: 1.5rem;
@@ -48,7 +78,7 @@
   cursor: pointer;
 }
 
-/* Mobile menu */
+
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -58,19 +88,19 @@
   border-bottom: 1px solid #ddd;
 }
 
-/* Mostrar menú mobile */
+
 .mobile-menu.show {
   display: flex;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
   .nav-buttons {
-    display: none; /* Oculta botones de desktop */
+    display: none; 
   }
 
   .hamburger {
-    display: block; /* Muestra hamburguesa */
+    display: block; 
   }
 }
 
+*/

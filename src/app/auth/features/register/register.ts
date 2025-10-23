@@ -9,12 +9,13 @@ import { AuthService } from '../../data-acess/auth.service';
 import { RegisterUser } from '../../models/auth.interface';
 import { ConfirmDialogComponent } from "../../../shared/ui/confirm-dialog-component/confirm-dialog-component";
 import { LoadingComponent } from '../../../shared/ui/loading-component/loading-component';
+import { Button as Button } from "../../../shared/ui/button/button";
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule, CommonModule, ButtonModule,
-    InputTextModule, FloatLabel, PasswordModule
-    ,ConfirmDialogComponent, LoadingComponent],
+  imports: [ReactiveFormsModule, CommonModule,
+    InputTextModule, FloatLabel, PasswordModule,
+    ConfirmDialogComponent, LoadingComponent, Button],
 
   templateUrl: './register.html',
   styleUrl: './register.css'
@@ -30,6 +31,8 @@ export class Register {
   dialogHeader = '';
   dialogMessage = '';
   dialogIcon = '';
+
+
 
   private authService = inject(AuthService)
 
@@ -72,7 +75,7 @@ export class Register {
           this.loading = false;
           this.ocurrioError = true;
           this.dialogHeader = "Ocurrio un error."
-          this.dialogMessage = `${err.error.message}`
+          this.dialogMessage = `${err.error.message ?? 'Error, intentelo de nuevo.'}`
           this.dialogIcon = "fa-solid fa-circle-exclamation"
           this.dialogVisible = true;
         }

@@ -1,5 +1,16 @@
-<!-- navbar.component.html -->
-<nav class="navbar">
+<nav class="nav-menu">
+  <a href="#">Fútbol</a>
+  <a href="#">Básquet</a>
+  <a href="#">Otros Deportes</a>
+  <a href="#" class="ofertas">Ofertas</a>
+</nav>
+
+
+
+
+
+
+<!-- <nav class="navbar">
   <div class="logo">MiApp</div>
 
  @if(!isLoggedIn){
@@ -8,16 +19,16 @@
     <button [routerLink]="'/auth/sign-up'" class="btn btn-success">Registrarse</button>
   </div>
 
-  <!-- Menú hamburguesa mobile -->
+  <!-- Menú hamburguesa mobile 
   <button class="hamburger" (click)="toggleMobileMenu()">☰</button>
  }
-</nav>
+</nav> -->
 
 <!-- Menú mobile -->
-<div class="mobile-menu" [class.show]="mobileMenuVisible">
+<!-- <div class="mobile-menu" [class.show]="mobileMenuVisible">
   <button (click)="openLogin()" class="btn btn-primary">Iniciar sesión</button>
   <button [routerLink]="'/auth/sign-up'" class="btn btn-success">Registrarse</button>
-</div>
+</div> -->
 
 <!-- Login Modal -->
-<app-login [(visible)]="loginVisible" (visibleChange)="loginVisible = $event"></app-login>
+<!-- <app-login [(visible)]="loginVisible" (visibleChange)="loginVisible = $event"></app-login> -->

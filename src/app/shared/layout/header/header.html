@@ -1,0 +1,37 @@
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <span class="material-symbols-outlined icon">sports_soccer</span>
+                    <h2 class="name-tienda">Sport Tees</h2>
+                </div>
+            </div>
+            <app-navbar></app-navbar>
+            <div class="header-right">
+                <div class="search-box">
+                    <span class="material-symbols-outlined search-icon">search</span>
+                    <input type="text" placeholder="Buscar camisetas..." />
+                </div>
+
+                <div class="actions">
+                    <button (click)="openLogin()" class="action-btn">
+                        <span class="material-symbols-outlined">person</span>
+
+                    </button>
+                    @if(!isLoggedIn){
+                    <p class="ingresa">Ingresa</p>
+                    }
+                    <label class="action-btn cart-btn" for="cart-toggle">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <span class="cart-badge"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+@if(!isLoggedIn){
+<app-login [(visible)]="loginVisible" (visibleChange)="loginVisible = $event"></app-login>
+}

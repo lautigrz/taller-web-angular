@@ -3,7 +3,7 @@ form{
     flex-direction: column;
     align-items: center;
     gap:40px;
-    width: 90%;
+    width: 100%;
     overflow: hidden;
     padding: 10px 0px;
 }
@@ -12,8 +12,17 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:40px;
+    gap:15px;
     overflow: hidden;
+    margin-top: 20px;
+}
+
+.otros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .login > span{
@@ -21,18 +30,7 @@ form{
     font-weight: 900;
 }
 
-:host ::ng-deep .p-button {
-  background: #62c9e9 !important; 
-  border-color: #62c9e9 !important;
-  color: white !important;
-  border-radius: 10px;
-}
 
-:host ::ng-deep .p-button:hover {
-  background: #62c9e9 !important;
-  border-color: #62c9e9 !important;
-  color: white !important;
-}
 :host ::ng-deep .p-dialog-content {
     overflow-y: hidden !important;
 }
@@ -59,12 +57,30 @@ form{
 
 .form-fields ::ng-deep .p-floatlabel,
 input {
-    width: 100% !important;
+    width:100% !important;
     padding: 0.75rem !important;
     font-size: 1rem;
 }
 
-.form-fields ::ng-deep .p-password {
-    width: 100% !important;
+::ng-deep .p-floatlabel{
+    width: 100%;
+}
 
+.inputs{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+::ng-deep .p-password {
+    display: flex !important; 
+   
+}
+
+::ng-deep .p-inputtext{
+    width: 100%;
+    padding: 0.75rem !important;
 }

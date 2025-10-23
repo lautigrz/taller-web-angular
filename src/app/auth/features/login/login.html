@@ -1,40 +1,40 @@
-
-
-<p-dialog [modal]="true" [(visible)]="visible" (onHide)="visibleChange.emit(false)"
- [closable]="true" [dismissableMask]="true"
-    [style]="{ width: '50%', minWidth: '20rem', maxWidth: '30rem', height: 'auto' }" [baseZIndex]="10000">
-     @if(mensajeError){
-            <p class="error">{{mensajeError}}</p>
-        }
+<p-dialog [modal]="true" [(visible)]="visible" (onHide)="visibleChange.emit(false)" [closable]="true"
+    [dismissableMask]="true" [style]="{ width: '50%', minWidth: '20rem', maxWidth: '30rem', height: 'auto' }"
+    [baseZIndex]="10000">
+    @if(mensajeError){
+    <p class="error">{{mensajeError}}</p>
+    }
     <div class="login">
 
         <span class="p-text-secondary text-center mb-4">Iniciar sesion</span>
 
         <form [formGroup]="loginForm">
-            <p-floatlabel variant="on">
-            <input pInputText id="on_label" autocomplete="off" formControlName="email" />
-            <label for="on_label">Email</label>
-        </p-floatlabel>
+            <div class="inputs">
+                <p-floatlabel variant="on">
+                <input pInputText id="on_label" autocomplete="off" formControlName="email" />
+                <label for="on_label">Email</label>
+            </p-floatlabel>
 
-        <p-floatlabel variant="on">
-            <input pInputText id="on_label" autocomplete="off" formControlName="password" />
-            <label for="on_label">Contraseña</label>
-        </p-floatlabel>
+          <p-floatlabel variant="on">
+                <p-password inputId="password" [feedback]="false" formControlName="password" />
+                <label for="password">Contraseña</label>
+            </p-floatlabel>
+            </div>
 
-         <a href="#" class="reset-pass" (click)="abrirModal($event)">¿Olvidaste tu contraseña?</a>
-        <div class="flex gap-2 w-full justify-center">
-            <p-button label="Iniciar" severity="primary" (click)="onSubmit()" />
-        </div>
+            <div class="otros">
+                <a href="#" class="reset-pass" routerLink="/auth/sign-up">Registrate</a> 
+                <a href="#" class="reset-pass" (click)="abrirModal($event)">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="flex gap-2 w-full justify-center">
+                <app-button texto="Iniciar" (click)="onSubmit()"></app-button>
+            </div>
         </form>
-
-       
-
     </div>
 
 </p-dialog>
 
 @if(loading){
-    <app-loading-component></app-loading-component>
+<app-loading-component></app-loading-component>
 }
 
 <app-reset-password [visible]="mostrarModal" (onClose)="cerrarModal()"></app-reset-password>

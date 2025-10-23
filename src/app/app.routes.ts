@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
 import { Navbar } from './shared/layout/navbar/navbar';
+import { Header } from './shared/layout/header/header';
 
 export const routes: Routes = [
     {
         path:'',
-        component:Navbar
+        component:Header
     },
     {
     path: 'auth',

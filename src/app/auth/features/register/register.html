@@ -12,7 +12,7 @@
 
 
 <section class="register-container">
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="registerForm">
         <header>
             <h3>Registrate</h3>
         </header>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="button-group">
-            <p-button type="submit" label="Registrarse" styleClass="p-button-success w-full" />
+             <app-button texto="Registrarse" (click)="onSubmit()"></app-button>
         </div>
 
         @if(submitted && registerForm.errors){

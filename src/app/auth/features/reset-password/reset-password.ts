@@ -6,10 +6,12 @@ import { Dialog } from 'primeng/dialog';
 import { FloatLabel } from 'primeng/floatlabel';
 import { AuthService } from '../../data-acess/auth.service';
 import { LoadingComponent } from '../../../shared/ui/loading-component/loading-component';
+import { Button } from '../../../shared/ui/button/button';
 
 @Component({
   selector: 'app-reset-password',
-  imports: [Dialog, ButtonModule, ReactiveFormsModule, CommonModule, FloatLabel, LoadingComponent],
+  imports: [Dialog, ButtonModule, ReactiveFormsModule, 
+    CommonModule, FloatLabel, LoadingComponent, Button],
   templateUrl: './reset-password.html',
   styleUrl: './reset-password.css'
 })
@@ -19,6 +21,7 @@ export class ResetPassword {
   mensaje: string = '';
   esError: boolean = false;
   loading = false;
+ 
   @Input() visible: boolean = false;
   @Output() onClose = new EventEmitter<void>();
 

@@ -46,7 +46,7 @@ export class ResetPassword {
         },
         error: (error) => {
 
-          this.mensaje = error.error.message;
+          this.mensaje = error.error.message ?? 'Ocurrio un error';
           this.esError = true;
           this.loading = false;
         }

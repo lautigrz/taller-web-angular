@@ -26,6 +26,7 @@ form{
 }
 
 .login > span{
+    color: var(--text-color);
     font-size: 1.5em;
     font-weight: 900;
 }
@@ -40,11 +41,12 @@ form{
     text-decoration: none;
     font-size: 1em;
     font-weight: 700;
-    color: rgb(105, 105, 105);
+    color: var(--reset-pass);
+    transition: color 0.3s ease;
 }
 
 .reset-pass:hover{
-    color: rgb(54, 54, 54);
+    color: var(--login-action-hover);
 }
 
 .error{
@@ -84,3 +86,8 @@ input {
     width: 100%;
     padding: 0.75rem !important;
 }
+
+::ng-deep .p-inputtext:enabled:focus{
+    border-color:  rgb(83, 111, 172);
+}
+

@@ -1,7 +1,16 @@
 .confirmacion {
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 
+}
+
+i{
+    margin-top: 10px;
+}
+
+p{
+    color: var(--text-color);
 }

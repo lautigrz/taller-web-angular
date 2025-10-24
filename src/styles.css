@@ -12,15 +12,16 @@
   --header-fondo: #dfdfdf;
   --nav-text: #525151;
   --footer-bg: #182333;
-  ;
   --footer-text: #ffffff;
   --action-btn-hover: #dfdfdf81;
+  --login-action-hover: #a7a5a5;
   --line-header: #b4b4b480;
-
+  --reset-pass: color: rgb(105, 105, 105);
 
   --button-bg: #007bff;
   --button-text: #ffffff;
   --button-hover-bg: #0056b3;
+
 
 }
 
@@ -33,17 +34,26 @@
   --header-fondo: rgb(34, 34, 34);
   --nav-text: #cfcfcf;
   --line-header: #619af741;
-
-
   --footer-bg: #030303;
   --footer-text: #c2c2c2;
   --action-btn-hover: #3b83f670;
+  --reset-pass: white;
+
+
   --button-bg: #4444ff;
   --button-text: #ffffff;
   --button-hover-bg: #6666ff;
+
 }
 
 body {
+  --p-inputtext-color: var(--text-color);
+  --p-dialog-background: var(--bg-color);
+
+  --p-inputtext-placeholder-color: var(--text-color);
+  --p-inputtext-background: var(--bg-color);
+  --p-floatlabel-bg: var(--bg-color);
+  --p-inputtext-focus-border-color: var(--action-btn-hover);
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;

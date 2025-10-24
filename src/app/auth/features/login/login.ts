@@ -53,8 +53,8 @@ export class Login {
         },
         error: (err) => {
           this.loading = false;
-          this.mensajeError = err.error.message ?? "Ocurrio un error"
-
+          console.log(err)
+      
         }
       })
 

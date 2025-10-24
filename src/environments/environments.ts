@@ -5,5 +5,7 @@ export const environment = {
   loginEndpoint: '/auth/login',
   emailCodePasswordEndpoint: '/auth/recover',
   verifyTokenEndpoint: '/auth/verify',
-  updatePasswordEndpoint: '/auth/update-password'
+  updatePasswordEndpoint: '/auth/update-password',
+  verifyStateEndpoint: '/auth/me',
+  refreshTokenEndpoint: '/auth/refresh'
 };

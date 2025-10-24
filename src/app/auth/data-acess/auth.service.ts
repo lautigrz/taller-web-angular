@@ -3,6 +3,7 @@ import { environment } from '../../../environments/environments';
 import { HttpClient } from '@angular/common/http';
 import { LoginUser, MessageEmail, RegisterResponse, RegisterUser, UpdatePasswordUser } from '../models/auth.interface';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { AuthStateService, Usuario } from '../../core/data-access/auth-state.service';
 
 
 @Injectable({
@@ -17,7 +18,7 @@ export class AuthService {
   private userName = new BehaviorSubject<string | null>(null);
   userName$ = this.userName.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authState: AuthStateService) { }
 
   register(data: RegisterUser): Observable<RegisterResponse> {
     return this.http.post<RegisterResponse>(`${this.baseUrl}${environment.registerEndopint}`, data).pipe(
@@ -31,13 +32,13 @@ export class AuthService {
   logout(): Observable<any> {
     return this.http.post(`${this.baseUrl}/logout`, {}, { withCredentials: true })
       .pipe(
-        tap(() => this.loggedIn.next(false))
+        tap(() => this.authState.clearUser())
       );
   }
 
-  login(data: LoginUser): Observable<string> {
-    return this.http.post<string>(`${this.baseUrl}${environment.loginEndpoint}`, data).pipe(
-      tap(() => this.loggedIn.next(true))
+  login(data: LoginUser): Observable<Usuario> {
+    return this.http.post<Usuario>(`${this.baseUrl}${environment.loginEndpoint}`, data,{withCredentials: true}).pipe(
+      tap((usuario: Usuario) => this.authState.setUser(usuario))
     )
   }
 
@@ -51,6 +52,18 @@ export class AuthService {
 
   updatePassword(data: UpdatePasswordUser): Observable<any> {
     return this.http.put<any>(`${this.baseUrl}${environment.updatePasswordEndpoint}`, data)
+  }
+
+  verifyState(): Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}${environment.verifyStateEndpoint}`, {withCredentials: true}).pipe(
+      tap(usuario => this.authState.setUser(usuario)
+    
+      )
+    )
+  }
+
+  refreshToken(){
+    return this.http.post(`${this.baseUrl}${environment.refreshTokenEndpoint}`, {}, {withCredentials: true})
   }
 
   getName(): string | null {

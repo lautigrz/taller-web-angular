@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Navbar } from '../navbar/navbar';
 import { Login } from '../../../auth/features/login/login';
-import { AuthService } from '../../../auth/data-acess/auth.service';
-import { Footer } from '../footer/footer';
 import { ThemeService } from '../../../theme/theme.service';
+import { AuthStateService } from '../../../core/data-access/auth-state.service';
 
 
 @Component({
@@ -18,12 +17,14 @@ export class Header {
   isDark = false;
   userName: string | null = '';
 
-  constructor(private authService: AuthService, private themeService: ThemeService) {
+  constructor(private authState: AuthStateService, private themeService: ThemeService) {
     this.isDark = document.documentElement.classList.contains('dark');
-    this.authService.isLoggedIn$.subscribe(logged => {
-      console.log("esta logeado", logged)
-      this.isLoggedIn = logged;
-      if (logged) this.userName = this.authService.getName();
+
+    this.authState.isLoggedIn$.subscribe(isLogged => {
+      this.isLoggedIn = isLogged;
+    })
+    this.authState.user$.subscribe(user => {
+      this.userName = user?.name ?? '';
     });
   }
 

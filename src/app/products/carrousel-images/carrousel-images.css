@@ -1,0 +1,27 @@
+/* Desktop */
+img {
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 200px;
+  min-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Tablet y móviles */
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;  /* se adapta al ancho del contenedor */
+    max-height: 250px;
+    min-width: auto;
+    min-height: auto;
+    object-fit: contain; /* que no se recorte la imagen */
+  }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}

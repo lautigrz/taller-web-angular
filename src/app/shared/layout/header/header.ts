@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Navbar } from '../navbar/navbar';
 import { Login } from '../../../auth/features/login/login';
 import { ThemeService } from '../../../theme/theme.service';
@@ -16,6 +16,7 @@ export class Header {
   isLoggedIn = false;
   isDark = false;
   userName: string | null = '';
+  @Output() openCart = new EventEmitter<void>();
 
   constructor(private authState: AuthStateService, private themeService: ThemeService) {
     this.isDark = document.documentElement.classList.contains('dark');
@@ -29,14 +30,19 @@ export class Header {
   }
 
   openLogin() {
-    console.log(this.loginVisible)
+
     this.loginVisible = true;
 
-    console.log(this.loginVisible)
   }
 
   toggleTheme() {
     this.themeService.toggleDarkMode();
     this.isDark = !this.isDark;
   }
+
+   onCartClick() {
+
+    this.openCart.emit();
+  }
+
 }

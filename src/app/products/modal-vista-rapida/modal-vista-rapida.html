@@ -1,0 +1,41 @@
+<p-dialog [(visible)]="visible" [modal]="true" (onHide)="onClose()" [style]="{ width: '55rem' }">
+    <ng-template #header>
+        <div class="inline-flex items-center justify-center gap-2">
+
+            <span class="font-bold whitespace-nowrap">Producto</span>
+        </div>
+    </ng-template>
+    <div class="product-card">
+          <div class="product-carousel">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-qSYHRfY1V5nRehL_esf-aybA6v3GB_wLNeX29A2AUIDlGUCHXYIzzwWp44XmpvYRQeJnfXjWMS6cBSuJtRu3jcfSTyboLJEysjTESeBt3daHbTQcWgLUsGLmNi2xbxjKUDJDQ4ONY3w-l1gTDUHuul6s41KmYUbubVz6vlrJbJEpkgAraPJjchcHsBTWbNJFh49ow3wY5nDKo-MVSnWdKEuqHyvQd4o-VTzSDeekJFEw8vWNmrZkM7oUIFY7aX5VwRaeJyHdGGk" alt="Camiseta Real Madrid" class="carousel-img">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-qSYHRfY1V5nRehL_esf-aybA6v3GB_wLNeX29A2AUIDlGUCHXYIzzwWp44XmpvYRQeJnfXjWMS6cBSuJtRu3jcfSTyboLJEysjTESeBt3daHbTQcWgLUsGLmNi2xbxjKUDJDQ4ONY3w-l1gTDUHuul6s41KmYUbubVz6vlrJbJEpkgAraPJjchcHsBTWbNJFh49ow3wY5nDKo-MVSnWdKEuqHyvQd4o-VTzSDeekJFEw8vWNmrZkM7oUIFY7aX5VwRaeJyHdGGk" alt="Camiseta Real Madrid" class="carousel-img">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-qSYHRfY1V5nRehL_esf-aybA6v3GB_wLNeX29A2AUIDlGUCHXYIzzwWp44XmpvYRQeJnfXjWMS6cBSuJtRu3jcfSTyboLJEysjTESeBt3daHbTQcWgLUsGLmNi2xbxjKUDJDQ4ONY3w-l1gTDUHuul6s41KmYUbubVz6vlrJbJEpkgAraPJjchcHsBTWbNJFh49ow3wY5nDKo-MVSnWdKEuqHyvQd4o-VTzSDeekJFEw8vWNmrZkM7oUIFY7aX5VwRaeJyHdGGk" alt="Camiseta Real Madrid" class="carousel-img">
+  </div>
+        <div class="product-card-header">
+            <h3>Camiseta Titular Real Madrid 23/24</h3>
+        </div>
+
+        <p class="product-card-price">$99.99</p>
+        <p class="product-card-description">
+            La legendaria camiseta blanca del Real Madrid, rediseñada para la temporada 23/24 con detalles dorados y
+            tecnología transpirable de última generación.
+        </p>
+
+        <div class="product-card-options">
+        
+            <div>
+                <h4>Talle disponibles</h4>
+                <div class="size-options">
+                    <button class="default">S</button>
+                    <button class="default">M</button>
+                    <button class="selected">L</button>
+                    <button class="default">XL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #footer>
+
+    </ng-template>
+</p-dialog>

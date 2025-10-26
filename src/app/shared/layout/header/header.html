@@ -22,10 +22,10 @@
                     @if(!isLoggedIn){
                     <p class="ingresa">Ingresa</p>
                     }
-                    <label class="action-btn cart-btn" for="cart-toggle">
+                    <button class="action-btn cart-btn" (click)="onCartClick()">
                         <span class="material-symbols-outlined">shopping_cart</span>
                         <span class="cart-badge"></span>
-                    </label>
+                    </button>
                     <button (click)="toggleTheme()" class="action-btn">
                         @if (isDark) {
                         <span class="material-symbols-outlined">

@@ -1,2 +1,7 @@
+<app-header (openCart)="toggleCart()"></app-header>
 
-<router-outlet />
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>
+
+<app-carrito [visible]="cartVisible" (visibleChange)="cartVisible = $event"></app-carrito>

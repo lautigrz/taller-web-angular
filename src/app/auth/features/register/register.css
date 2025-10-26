@@ -52,16 +52,11 @@ input {
 .button-group {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.8rem;
 }
 
-.button-group ::ng-deep .p-button {
-    font-size: 1rem;
-    height: 2.8rem;
-    border-radius: 0.5rem;
-    width: 100%;
-}
 
 .error {
     color: red;

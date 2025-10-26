@@ -1,12 +1,64 @@
-:host ::ng-deep .p-button {
-  background: #3b82f6  !important; 
-  border-color: #3b82f6  !important;
-  color: white !important;
-  border-radius: 10px;
+/* Base */
+.btn {
+  border: none;
+  background: #3a6df0;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+  font-family: Lexend, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
 }
 
-:host ::ng-deep .p-button:hover {
-  background: #316dce  !important;
-  border-color: #316dce  !important;
-  color: white !important;
+
+.btn.primary {
+  background: #3a6df0;
+  color: #fff;
 }
+
+.btn.primary:hover {
+  background: #275cee;
+}
+
+.btn.secondary {
+  background: #374151;
+  color: #fff;
+}
+
+.btn.secondary:hover {
+  background: #4b5563;
+}
+
+.btn.cart {
+  background: #3a6df0;
+  color: #fff;
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+.btn.cart:hover {
+   background: #275cee;
+}
+
+/* Tamaños */
+.btn.sm {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+.btn.md {
+  padding: 10px 15px;
+  font-size: 0.8rem;
+}
+
+.btn.lg {
+  padding: 10px 15px;
+  font-size: 1rem;
+}
+
+.i {
+  font-family: "Material Symbols Outlined";
+  font-size: 1em;
+}
+

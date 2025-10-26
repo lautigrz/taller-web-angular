@@ -48,10 +48,10 @@
                 <label for="confirmPassword">Confirmar contraseña</label>
             </p-floatlabel>
         </div>
-
         <div class="button-group">
-             <app-button texto="Registrarse" (click)="onSubmit()"></app-button>
+             <app-button texto="Registrarse" size="lg" (click)="onSubmit()"></app-button>
         </div>
+
 
         @if(submitted && registerForm.errors){
         <div class="error">

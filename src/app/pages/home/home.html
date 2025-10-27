@@ -2,7 +2,7 @@
   <section class="container">
     <h2 class="title">Camisetas de Fútbol</h2>
     <div class="cards-grid">
-      @for (item of productos; track $index) {
+      @for (item of products; track $index) {
       <app-card-products [producto]="item" (addProduct)="cartService.addProduct($event)"></app-card-products>
       }
     </div>

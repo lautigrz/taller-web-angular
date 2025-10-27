@@ -11,7 +11,7 @@
             <div class="header-right">
                 <div class="search-box">
                     <span class="material-symbols-outlined search-icon">search</span>
-                    <input type="text" placeholder="Buscar camisetas..." />
+                    <input type="text" placeholder="Buscar camisetas..." autocomplete="off" />
                 </div>
 
                 <div class="actions">
@@ -24,7 +24,7 @@
                     }
                     <button class="action-btn cart-btn" (click)="onCartClick()">
                         <span class="material-symbols-outlined">shopping_cart</span>
-                        <span class="cart-badge"></span>
+                        <span class="cart-badge" style="color: white;">{{cartService.getCart().length}}</span>
                     </button>
                     <button (click)="toggleTheme()" class="action-btn">
                         @if (isDark) {

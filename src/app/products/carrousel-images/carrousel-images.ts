@@ -1,52 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, Input, input, OnChanges, SimpleChanges } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
+import { Imagene } from '../models/product.interface';
 @Component({
   selector: 'app-carrousel-images',
   imports: [CarouselModule],
   templateUrl: './carrousel-images.html',
   styleUrl: './carrousel-images.css'
 })
-export class CarrouselImages {
-  products: any[] | undefined;
+export class CarrouselImages implements OnChanges {
+   products: any[] | undefined;
+
+   @Input() imagenes: Imagene[] = [];
 
   responsiveOptions: any[] | undefined;
 
   constructor() { }
 
   ngOnInit() {
-
-
-   this.responsiveOptions = [
-  {
-    breakpoint: '1400px',
-    numVisible: 1,
-    numScroll: 1
-  },
-  {
-    breakpoint: '1199px',
-    numVisible: 1,
-    numScroll: 1
-  },
-  {
-    breakpoint: '767px',
-    numVisible: 1,
-    numScroll: 1
-  },
-  {
-    breakpoint: '575px',
-    numVisible: 1,
-    numScroll: 1
-  }
-];
-
-
-    this.products = [
+    this.responsiveOptions = [
       {
-        image:"https://lh3.googleusercontent.com/aida-public/AB6AXuD-qSYHRfY1V5nRehL_esf-aybA6v3GB_wLNeX29A2AUIDlGUCHXYIzzwWp44XmpvYRQeJnfXjWMS6cBSuJtRu3jcfSTyboLJEysjTESeBt3daHbTQcWgLUsGLmNi2xbxjKUDJDQ4ONY3w-l1gTDUHuul6s41KmYUbubVz6vlrJbJEpkgAraPJjchcHsBTWbNJFh49ow3wY5nDKo-MVSnWdKEuqHyvQd4o-VTzSDeekJFEw8vWNmrZkM7oUIFY7aX5VwRaeJyHdGGk"
+        breakpoint: '1400px',
+        numVisible: 1,
+        numScroll: 1
       },
-       {
-        image:"https://lh3.googleusercontent.com/aida-public/AB6AXuD-qSYHRfY1V5nRehL_esf-aybA6v3GB_wLNeX29A2AUIDlGUCHXYIzzwWp44XmpvYRQeJnfXjWMS6cBSuJtRu3jcfSTyboLJEysjTESeBt3daHbTQcWgLUsGLmNi2xbxjKUDJDQ4ONY3w-l1gTDUHuul6s41KmYUbubVz6vlrJbJEpkgAraPJjchcHsBTWbNJFh49ow3wY5nDKo-MVSnWdKEuqHyvQd4o-VTzSDeekJFEw8vWNmrZkM7oUIFY7aX5VwRaeJyHdGGk"
+      {
+        breakpoint: '1199px',
+        numVisible: 1,
+        numScroll: 1
+      },
+      {
+        breakpoint: '767px',
+        numVisible: 1,
+        numScroll: 1
+      },
+      {
+        breakpoint: '575px',
+        numVisible: 1,
+        numScroll: 1
       }
-    ]
+    ];
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['imagenes'] && this.imagenes) {
+      console.log('Imagenes recibidas:', this.imagenes);
+    }
+  }
+  getImageUrl(url: string){
+    return `http://localhost:3000${url}`
   }
 }

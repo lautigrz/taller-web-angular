@@ -1,7 +1,9 @@
 <div class="card">
     <div class="card-image">
-        <img src="{{producto()?.imagenUrl}}" alt="Camiseta Real Madrid 23/24">
+       @if (producto()?.imagenes?.length) {
+         <img [src]="getImagenPrincipal()" alt="Camiseta Real Madrid 23/24">
         <span class="badge badge-red">OFERTA</span>
+       }
 
         <div class="overlay">
             <button class="view-btn" (click)="openQuickView()">👁 Vista Rápida</button>

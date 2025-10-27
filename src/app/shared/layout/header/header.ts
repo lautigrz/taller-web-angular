@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { Navbar } from '../navbar/navbar';
 import { Login } from '../../../auth/features/login/login';
 import { ThemeService } from '../../../theme/theme.service';
 import { AuthStateService } from '../../../core/data-access/auth-state.service';
+import { CartService } from '../../../cart/data-access/cart.service';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class Header {
   userName: string | null = '';
   @Output() openCart = new EventEmitter<void>();
 
+  cartService = inject(CartService);
   constructor(private authState: AuthStateService, private themeService: ThemeService) {
     this.isDark = document.documentElement.classList.contains('dark');
 
@@ -40,7 +42,7 @@ export class Header {
     this.isDark = !this.isDark;
   }
 
-   onCartClick() {
+  onCartClick() {
 
     this.openCart.emit();
   }

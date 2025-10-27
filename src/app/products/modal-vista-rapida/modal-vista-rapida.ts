@@ -1,4 +1,4 @@
-import { Producto } from './../models/product.interface';
+import { Producto, Products } from './../models/product.interface';
 import { Component, EventEmitter, input, Input, Output } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 import { CarrouselImages } from '../carrousel-images/carrousel-images';
@@ -12,7 +12,7 @@ import { CarrouselImages } from '../carrousel-images/carrousel-images';
 export class ModalVistaRapida {
   @Input() visible = false;
   @Output() visibleChange = new EventEmitter<boolean>();
-  producto = input<Producto>();
+  producto = input<Products>();
   onClose() {
     this.visible = false;
     this.visibleChange.emit(this.visible);

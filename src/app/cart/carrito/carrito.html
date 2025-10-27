@@ -1,12 +1,10 @@
-<p-drawer header="Tu Carrito" [(visible)]="visible"
- (visibleChange)="visibleChange.emit($event)" 
- position="right" 
-[closable]="true" [style]="{width: '360px'}">
+<p-drawer header="Tu Carrito" [(visible)]="visible" (visibleChange)="visibleChange.emit($event)" position="right"
+    [closable]="true" [style]="{width: '360px'}">
 
     <div class="cart-body">
         @for (item of products(); track $index) {
-            <div class="cart-item">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-qSYHRfY1V5nRehL_esf-aybA6v3GB_wLNeX29A2AUIDlGUCHXYIzzwWp44XmpvYRQeJnfXjWMS6cBSuJtRu3jcfSTyboLJEysjTESeBt3daHbTQcWgLUsGLmNi2xbxjKUDJDQ4ONY3w-l1gTDUHuul6s41KmYUbubVz6vlrJbJEpkgAraPJjchcHsBTWbNJFh49ow3wY5nDKo-MVSnWdKEuqHyvQd4o-VTzSDeekJFEw8vWNmrZkM7oUIFY7aX5VwRaeJyHdGGk"
+        <div class="cart-item">
+            <img [src]="getImageUrl(item.imagenes[0].url)"
                 alt="Camiseta Real Madrid">
             <div class="cart-item-info">
                 <h4>{{item.nombre}}</h4>
@@ -22,12 +20,20 @@
 
     </div>
 
+    @if (products().length > 0) {
     <div class="cart-footer">
         <div class="subtotal">
             <span>Subtotal</span>
             <span>{{subTotal()}}</span>
         </div>
         <app-button texto="Finalizar compra" size="lg" variant="cart"></app-button>
-        <button class="view-cart-btn">Ver Carrito Completo</button>
     </div>
+    }@else {
+    <div class="container-cart-vacio">
+        <h3>Ups, carrito vacio</h3>
+        <span class="material-symbols-outlined">
+            shopping_cart
+        </span>
+    </div>
+    }
 </p-drawer>

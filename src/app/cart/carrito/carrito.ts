@@ -16,15 +16,17 @@ export class Carrito {
 
 
   cartService = inject(CartService);
-
-
   products = this.cartService.cart;
 
   subTotal = computed(() =>
-    this.products().reduce((sum, p) => sum + p.precio, 0)
+    this.products().reduce((sum, p) => sum + Number(p.precio), 0)
   );
 
   removeProduct(index: number) {
     this.cartService.removeProduct(index);
+  }
+
+  getImageUrl(url: string){
+    return `http://localhost:3000${url}`
   }
 }

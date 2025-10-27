@@ -7,5 +7,6 @@ export const environment = {
   verifyTokenEndpoint: '/auth/verify',
   updatePasswordEndpoint: '/auth/update-password',
   verifyStateEndpoint: '/auth/me',
-  refreshTokenEndpoint: '/auth/refresh'
+  refreshTokenEndpoint: '/auth/refresh',
+  getAllProducts: '/productos/'
 };

@@ -10,14 +10,14 @@ import { LoginUser } from '../../models/auth.interface';
 import { AuthService } from '../../data-acess/auth.service';
 import { ResetPassword } from '../reset-password/reset-password';
 import { LoadingComponent } from '../../../shared/ui/loading-component/loading-component';
-import { RouterLink, RouterModule } from "@angular/router";
+import { Router, RouterLink, RouterModule } from "@angular/router";
 import { Button } from '../../../shared/ui/button/button';
 import { PasswordModule } from 'primeng/password';
 
 @Component({
   selector: 'app-login',
   imports: [Dialog, Button, InputTextModule, FloatLabel, ReactiveFormsModule,
-    CommonModule, ResetPassword, LoadingComponent, RouterLink, RouterModule,PasswordModule],
+    CommonModule, ResetPassword, LoadingComponent,RouterModule,PasswordModule],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
@@ -31,6 +31,7 @@ export class Login {
  
 
   private authService = inject(AuthService)
+  private router = inject(Router)
   mensajeError: string = '';
 
   constructor(private fb: FormBuilder) {
@@ -70,6 +71,12 @@ export class Login {
   cerrarModal() {
     this.mostrarModal = false;
   }
+
+goSignUp() {
+  this.mostrarModal = false;
+  this.visible = false;
+  this.router.navigate(['/auth/sign-up']);
+}
 
 
 }

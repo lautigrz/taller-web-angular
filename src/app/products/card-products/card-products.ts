@@ -1,7 +1,7 @@
 import { Component, EventEmitter, input, output, Output } from '@angular/core';
 import { Button } from '../../shared/ui/button/button';
 import { ModalVistaRapida } from '../modal-vista-rapida/modal-vista-rapida';
-import { Producto } from '../models/product.interface';
+import { Producto, Products } from '../models/product.interface';
 
 
 @Component({
@@ -14,9 +14,9 @@ export class CardProducts {
 
   quickViewVisible = false;
 
-  producto = input<Producto>();
+  producto = input<Products>();
 
-  addProduct = output<Producto>();
+  addProduct = output<Products>();
 
   openQuickView() {
 
@@ -35,6 +35,12 @@ export class CardProducts {
       this.addProduct.emit(prod);
     }
   }
+
+    getImagenPrincipal(): string {
+  return this.producto()?.imagenes?.[0]?.url 
+         ? `http://localhost:3000${this.producto()?.imagenes[0].url}`
+         : '/assets/placeholder.png';
+}
 
 
 }

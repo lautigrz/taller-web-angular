@@ -1,11 +1,12 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './theme/theme.service';
 
 import { AuthService } from './auth/data-acess/auth.service';
-import { Carrito } from './products/carrito/carrito';
+import { Carrito } from './cart/carrito/carrito';
 import { Header } from './shared/layout/header/header';
 import { Footer } from './shared/layout/footer/footer';
+import { CartService } from './cart/data-access/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ import { Footer } from './shared/layout/footer/footer';
 export class App {
   protected readonly title = signal('taller-web-ii');
   cartVisible: boolean = false;
-
+  
   constructor(private themeService: ThemeService, private authService: AuthService) {
     this.authService.verifyState().subscribe({
       next: user => {

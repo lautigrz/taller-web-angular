@@ -11,13 +11,12 @@
         <app-carrousel-images></app-carrousel-images>
 
         <div class="product-card-header">
-            <h3>Camiseta Titular Real Madrid 23/24</h3>
+            <h3>{{producto()?.nombre}}</h3>
         </div>
 
-        <p class="product-card-price">$99.99</p>
+        <p class="product-card-price">{{producto()?.precio}}</p>
         <p class="product-card-description">
-            La legendaria camiseta blanca del Real Madrid, rediseñada para la temporada 23/24 con detalles dorados y
-            tecnología transpirable de última generación.
+        {{producto()?.descripcion}}
         </p>
 
         <div class="product-card-options">

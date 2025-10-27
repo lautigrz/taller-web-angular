@@ -1,9 +1,10 @@
-
-
-  <main>
-    <app-card-products></app-card-products>
+<main>
+  <section class="container">
+    <h2 class="title">Camisetas de Fútbol</h2>
+    <div class="cards-grid">
+      @for (item of productos; track $index) {
+      <app-card-products [producto]="item" (addProduct)="cartService.addProduct($event)"></app-card-products>
+      }
+    </div>
+  </section>
 </main>
-
-
-
-

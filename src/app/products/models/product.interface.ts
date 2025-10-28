@@ -13,6 +13,7 @@ export interface Products {
     descripcion:   string;
     precio:        string;
     stock:         number;
+    talla:         string;
     genero:        null;
     creadoEn:      Date;
     actualizadoEn: Date;

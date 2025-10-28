@@ -206,7 +206,14 @@
     color: var(--text-color);
     margin: 0;
 }
+.p-drawer-close-button :hover{
+  color:var(--bg-color);
+}
 
+
+:ng-deep .p-button-text.p-button-secondary:not(:disabled):hover{
+  background-color: var(--bg-color);
+}
 .container-cart-vacio span.material-symbols-outlined {
     font-size: 3.5rem;
     color: #8692fc;

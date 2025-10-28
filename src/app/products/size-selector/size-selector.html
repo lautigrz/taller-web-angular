@@ -1,0 +1,13 @@
+<div class="size-options">
+    @for (item of tallas; track $index) {
+         <label class="size-btn">
+        <input type="radio" 
+        [name]="'size-' + product()?.id" 
+        [value]="item"
+        (change)="selectSize(product()?.id, item)"
+        />
+        {{item}}
+    </label>
+    }
+   
+</div>

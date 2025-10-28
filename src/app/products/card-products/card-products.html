@@ -1,9 +1,10 @@
+<p-toast position="bottom-right" key="br" />
 <div class="card">
     <div class="card-image">
-       @if (producto()?.imagenes?.length) {
-         <img [src]="getImagenPrincipal()" alt="Camiseta Real Madrid 23/24">
+        @if (producto()?.imagenes?.length) {
+        <img [src]="getImagenPrincipal()" alt="Camiseta Real Madrid 23/24">
         <span class="badge badge-red">OFERTA</span>
-       }
+        }
 
         <div class="overlay">
             <button class="view-btn" (click)="openQuickView()">👁 Vista Rápida</button>
@@ -12,8 +13,23 @@
 
     <div class="card-info">
         <h3 class="item-title">{{producto()?.nombre}}</h3>
-        <p class="price">{{producto()?.precio}}</p>
-        <app-button texto="Añadir al carrito" icon="material-symbols-outlined" (click)="onAgregar()"></app-button>
+        <div class="info">
+            <p class="price">{{producto()?.precio}}</p>
+            <p class="talle">Talles disponibles</p>
+        </div>
+        <div class="actions">
+            <app-button texto="Añadir al carrito" icon="material-symbols-outlined" (click)="onAgregar()"></app-button>
+            <div class="product-card-options">
+
+                <div>
+                   <app-size-selector 
+                   [product]="producto()"
+                   (sizeSelect)="onSizeChange($event)"
+                   >
+                </app-size-selector>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

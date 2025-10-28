@@ -24,12 +24,15 @@
   --bg-card: #d6d6d6;
   --line-card: #929292;
   --price: #3572ff;
-  --cart-info-p:#3b3b3b;
-  
+  --cart-info-p: #3b3b3b;
+  --toast-bg: rgb(192, 192, 192);
+  --toast-success: rgb(2, 151, 2);
+  --toast-info-detail-color: rgb(63, 63, 63);
+  --active:rgb(44, 44, 44);
 }
 
 .dark {
-  
+
   --bg-color: #181818;
   --text-color: #ffffff;
   --header-bg: #181818;
@@ -47,26 +50,40 @@
   --button-hover-bg: #6666ff;
   --line-card: #333;
   --price: #6f9aff;
-  --cart-info-p:#aaa;
-
+  --cart-info-p: #aaa;
+  --toast-bg: rgba(22, 22, 22, 0.904);
+  --toast-success: rgb(31, 190, 31);
+  --toast-info-detail-color: rgb(219, 219, 219);
+   --active:rgb(107, 107, 107);
 }
 
 body {
   --p-inputtext-color: var(--text-color);
   --p-dialog-background: var(--bg-color);
-
+  --p-button-text-secondary-hover-background: var(--bg-color);
+  --p-button-text-secondary-active-background:var(--active);
   --p-inputtext-placeholder-color: var(--text-color);
   --p-inputtext-background: var(--bg-color);
   --p-floatlabel-bg: var(--bg-color);
   --p-inputtext-focus-border-color: var(--input-focus-border);
-  --p-drawer-background:var(--bg-color);
+  --p-drawer-background: var(--bg-color);
   --p-drawer-border-color: none;
-   --p-drawer-color: var(--text-color);
-
+  --p-drawer-color: var(--text-color);
+  --p-toast-success-background: var(--toast-bg);
+  --p-toast-success-border-color: var(--toast-bg);
+  --p-toast-success-color: var(--toast-success);
+  --p-toast-success-close-button-hover-background: var(--toast-bg);
+  --p-toast-success-detail-color: var(--toast-info-detail-color);
+  --p-toast-warn-background: var(--toast-bg);
+  --p-toast-warn-border-color: var(--toast-bg);
+  --p-toast-warn-color: rgb(255, 38, 38);
+  --p-toast-warn-detail-color: var(--toast-info-detail-color);
+  --p-toast-warn-close-button-hover-background: var(--toast-bg);
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
+
 
 
 header {

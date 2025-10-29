@@ -1,0 +1,30 @@
+<main>
+    <form [formGroup]="productoForm">
+        <section class="form-product">
+            <div class="image-product">
+                <app-imagen-product [form]="productoForm"></app-imagen-product>
+
+            </div>
+
+            <div class="inputs">
+                <app-form-product [form]="productoForm"></app-form-product>
+
+            </div>
+
+        </section>
+
+        <section class="variante">
+            <app-variante-product [form]="productoForm"></app-variante-product>
+        </section>
+
+        <section class="acciones">
+            <app-button texto="Cancelar" variant="secondary" size="sm"></app-button>
+            <app-button texto="Agregar producto" icon="material-symbols-outlined"
+             type="add"
+             (click)="onSubmit()"
+             ></app-button>
+        </section>
+
+
+    </form>
+</main>

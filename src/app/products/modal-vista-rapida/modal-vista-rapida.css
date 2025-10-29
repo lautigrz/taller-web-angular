@@ -10,6 +10,7 @@
 :host ::ng-deep .p-dialog {
     border: none !important;
     max-width: 40rem !important;
+    width: 80%;
     min-width: 10rem !important;
 
 }

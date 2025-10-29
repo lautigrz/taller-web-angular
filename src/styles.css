@@ -28,7 +28,16 @@
   --toast-bg: rgb(192, 192, 192);
   --toast-success: rgb(2, 151, 2);
   --toast-info-detail-color: rgb(63, 63, 63);
-  --active:rgb(44, 44, 44);
+  --active: rgb(44, 44, 44);
+  --btn-add-variant: #4a78c2;
+  --bg-dashboard: rgb(218, 218, 218);
+  --dropzone-bg: rgb(247, 247, 247);
+  --color-dropzone: #282b30;
+  --border-dropzone: rgb(187, 187, 187);
+  --label-form-product: #484a4d;
+  --bg-form-product: #ffffff;
+  --form-placeholder: #6d727a;
+
 }
 
 .dark {
@@ -54,14 +63,23 @@
   --toast-bg: rgba(22, 22, 22, 0.904);
   --toast-success: rgb(31, 190, 31);
   --toast-info-detail-color: rgb(219, 219, 219);
-   --active:rgb(107, 107, 107);
+  --active: rgb(107, 107, 107);
+  --btn-add-variant: #4381e6;
+  --bg-dashboard: #212d3f;
+  --dropzone-bg: #374151;
+  --color-dropzone: #8e97a8;
+  --border-dropzone: rgb(236, 236, 236);
+  --label-form-product: #d1d5db;
+  --bg-form-product: #374151;
+  --form-placeholder: #9ca3af;
+
 }
 
 body {
   --p-inputtext-color: var(--text-color);
   --p-dialog-background: var(--bg-color);
   --p-button-text-secondary-hover-background: var(--bg-color);
-  --p-button-text-secondary-active-background:var(--active);
+  --p-button-text-secondary-active-background: var(--active);
   --p-inputtext-placeholder-color: var(--text-color);
   --p-inputtext-background: var(--bg-color);
   --p-floatlabel-bg: var(--bg-color);
@@ -79,6 +97,17 @@ body {
   --p-toast-warn-color: rgb(255, 38, 38);
   --p-toast-warn-detail-color: var(--toast-info-detail-color);
   --p-toast-warn-close-button-hover-background: var(--toast-bg);
+  --p-select-background: var(--bg-form-product);
+  --p-select-border-color: var(--bg-form-product);
+  --p-select-placeholder-color: var(--form-placeholder);
+  --p-select-focus-border-color: #3b82f6;
+  --p-select-overlay-background: var(--bg-form-product);
+  --p-select-overlay-color: var(--text-color);
+  --p-select-option-focus-background: var(--bg-form-product);
+  --p-select-option-focus-color: var(--text-color);
+  --p-select-overlay-border-color: var(--bg-form-product);
+  --p-select-option-color: var(--text-color);
+  --p-select-color: var(--text-color);
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;

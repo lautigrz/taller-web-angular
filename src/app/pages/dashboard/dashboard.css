@@ -1,0 +1,65 @@
+main {
+    padding: 20px 30px;
+}
+
+.form-product {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+
+    border-radius: 10px;
+}
+
+form {
+    background-color: var(--bg-dashboard);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.variante {
+    padding: 20px;
+}
+
+
+.acciones {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+}
+
+.image-product,
+.inputs {
+    width: 45%;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 5px 10px;
+    }
+
+    .form-product {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 5px 10px;
+        gap: 16px;
+    }
+
+    .image-product,
+    .inputs {
+        flex: none;
+
+        width: 100%;
+    }
+
+    .variante {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    form{
+        padding: 10px 11px;
+    }
+
+}

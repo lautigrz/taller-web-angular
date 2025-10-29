@@ -3,7 +3,7 @@
     <ng-template #header>
         <div class="inline-flex items-center justify-center gap-2">
 
-            <img src="https://th.bing.com/th/id/R.0c6f71ef50fb3d713b399a05727b0216?rik=W5Or%2fIGaG0HHdA&riu=http%3a%2f%2f2.bp.blogspot.com%2f-rilSSpSZPw0%2fT0Y9QKKAp3I%2fAAAAAAAAFXY%2fQSV-Lp7-Tr0%2fs1600%2fLOGO%2bARSENAL.png&ehk=lbpNaMpi8kUC7GVutCz4hB82FASJrGZKFYdWaW%2bBN5w%3d&risl=&pid=ImgRaw&r=0"
+            <img [src]="producto()?.equipo?.icon"
              alt="" width="38px" height="40px">
         </div>
     </ng-template>
@@ -15,7 +15,7 @@
        
 
         <div class="product-card-header">
-            <h3>{{producto()?.nombre}}</h3>
+            <h3>{{producto()?.titulo}}</h3>
         </div>
 
         <p class="product-card-price">{{producto()?.precio}}</p>

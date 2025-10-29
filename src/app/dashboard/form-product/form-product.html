@@ -1,0 +1,32 @@
+<div class="form-section" [formGroup]="form">
+  <div class="form-group">
+    <label for="product-title">Título del Producto</label>
+    <input id="product-title" type="text" placeholder="Ej: Camiseta Titular Real Madrid 23/24" formControlName="titulo">
+  </div>
+
+  <div class="form-group" [formGroup]="form">
+    <label for="product-description">Descripción</label>
+    <textarea id="product-description" rows="4" placeholder="Describe los detalles del producto..."
+      formControlName="descripcion"></textarea>
+  </div>
+
+  <div class="grid-2" [formGroup]="form">
+    <div class="form-group">
+       <label for="product-league">Liga</label>
+      <p-select [options]="liga" 
+      formControlName="liga"
+      optionValue="id"
+      optionLabel="name" placeholder="Liga" (onChange)="ligaSelect()" />
+      
+    </div>
+
+    <div class="form-group" [formGroup]="form">
+     <label for="product-team">Equipo</label>
+      <p-select [options]="equipo"
+      optionValue="id" 
+      formControlName="equipo"
+      optionLabel="name" placeholder="Equipo" emptyMessage="Elija una liga"  />
+      
+    </div>
+  </div>
+</div>

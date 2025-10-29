@@ -8,5 +8,7 @@ export const environment = {
   updatePasswordEndpoint: '/auth/update-password',
   verifyStateEndpoint: '/auth/me',
   refreshTokenEndpoint: '/auth/refresh',
-  getAllProducts: '/productos/'
+  getAllProducts: '/productos/',
+  getAllLiga: '/liga',
+  createProductEndpoint: '/productos/'
 };

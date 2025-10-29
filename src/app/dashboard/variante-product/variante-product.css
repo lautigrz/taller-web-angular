@@ -1,0 +1,165 @@
+.product-variants {
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+    display: grid;
+    gap: 16px;
+    font-family: sans-serif;
+}
+
+
+.product-variants .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-variants .header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--label-form-product);
+
+    transition: color 0.3s ease;
+}
+
+.add-variant {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--btn-add-variant);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.add-variant:hover {
+    color: #2563eb;
+}
+
+.variant-card {
+    background-color: var( --dropzone-bg);
+    border: 1px solid var(--line-header);
+    border-radius: 8px;
+    padding: 16px;
+    display: grid;
+    gap: 12px;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+@media (max-width: 768px){
+ .product-variants{
+    padding: 7px 0px;
+ }
+ .variant-card{
+    padding: 5px 10px;
+ }
+ .header h2{
+    font-size: 15px !important;
+ }
+}
+
+.variant-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.variant-header h3 {
+    font-weight: 500;
+    color: var(--label-form-product);
+    transition: color 0.3s ease;
+}
+
+.delete-variant {
+    background: none;
+    border: none;
+    color: #dc2626;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: color 0.3s;
+}
+
+.delete-variant:hover {
+    color: #b91c1c;
+}
+
+
+.row {
+    display: grid;
+    gap: 16px;
+}
+
+@media (min-width: 640px) {
+    .row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.field label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: var(--label-form-product);
+    transition: color 0.3s ease;
+}
+
+.field input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--line-header);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    background-color: var(--dropzone-bg);
+    color: var(--text-color);
+    transition: color 0.3s ease, border-color 0.3s, box-shadow 0.3s, background-color 0.3s ease;
+}
+
+.field input::placeholder {
+    color: var(--form-placeholder);
+    transition: color 0.3s ease;
+}
+
+.field input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+
+.sizes {
+    margin-top: 12px;
+}
+
+.sizes label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--label-form-product);
+    transition: color 0.3s ease;
+}
+
+.sizes-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sizes-options .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    color: var(--label-form-product);
+    transition: color 0.3s ease;
+}
+
+.sizes-options input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #3b82f6;
+}

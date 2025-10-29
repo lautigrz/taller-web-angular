@@ -52,7 +52,7 @@ export class CardProducts {
     if (prod && size) {
       prod.talla = size
       this.addProduct.emit(prod);
-      this.showSuccess(prod.nombre,'success',"Producto agregado");
+      this.showSuccess(prod.titulo,'success',"Producto agregado");
       console.log(this.selectedSize, prod)
     } else {
        this.showSuccess("Debe elegir talla",'warn',"Error");

@@ -12,14 +12,14 @@ body {
 
 .title {
   color: var(--text-color);
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 20px;
   transition: color 0.3s ease;
 }
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 3fr));
   gap: 20px;
 }
 
@@ -121,7 +121,7 @@ body {
 
 .item-title {
   color: var(--text-color);
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 8px;
   transition: color 0.3s ease;
 }

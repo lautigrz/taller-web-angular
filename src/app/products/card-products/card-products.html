@@ -12,13 +12,13 @@
     </div>
 
     <div class="card-info">
-        <h3 class="item-title">{{producto()?.nombre}}</h3>
+        <h3 class="item-title">{{producto()?.titulo}}</h3>
         <div class="info">
             <p class="price">{{producto()?.precio}}</p>
             <p class="talle">Talles disponibles</p>
         </div>
         <div class="actions">
-            <app-button texto="Añadir al carrito" icon="material-symbols-outlined" (click)="onAgregar()"></app-button>
+            <app-button texto="Añadir al carrito" icon="material-symbols-outlined" type="add_shopping_cart" (click)="onAgregar()"></app-button>
             <div class="product-card-options">
 
                 <div>

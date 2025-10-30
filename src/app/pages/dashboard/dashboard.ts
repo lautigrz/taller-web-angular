@@ -6,10 +6,12 @@ import { Button } from "../../shared/ui/button/button";
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductoFormValue } from '../../dashboard/models/new-product.interface';
 import { DashboardService } from '../../dashboard/data-access/dashboard.service';
+import { LoadingComponent } from "../../shared/ui/loading-component/loading-component";
+import { ProductStateService } from '../../core/data-access/product-state.service';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [ImagenProduct, FormProduct, VarianteProduct, Button, ReactiveFormsModule],
+  imports: [ImagenProduct, FormProduct, VarianteProduct, Button, ReactiveFormsModule, LoadingComponent],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
@@ -17,6 +19,9 @@ export class Dashboard {
 
 
   private dashboardService = inject(DashboardService)
+  private productState = inject(ProductStateService);
+
+  loading = false;
 
   constructor() { }
   productoForm = new FormGroup({
@@ -36,6 +41,7 @@ export class Dashboard {
   onSubmit() {
 
     if (this.productoForm.valid) {
+      this.loading = true;
       const producto: ProductoFormValue = {
         imagen: this.productoForm.value.imagen!,
         titulo: this.productoForm.value.titulo!,
@@ -49,10 +55,14 @@ export class Dashboard {
       };
 
       this.dashboardService.crearNuevoProducto(producto).subscribe({
-        next:() => {
-          console.log("ok")
+        next:(data) => {
+          this.loading = false;
+          console.log("Producto con exito",this.loading, data);
+          this.productState.addProduct(data)
+          this.productoForm.reset();
         },
         error:(err) => {
+          this.loading = false;
           console.log(err);
         }
       })

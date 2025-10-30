@@ -27,7 +27,6 @@ export class FormProduct implements OnInit {
     this.dashboardService.obtenerLigas().subscribe({
       next: (liga: Liga[]) => {
         this.liga = liga;
-        console.log(liga);
       },
       error: (err) => {
         console.log(err);
@@ -42,7 +41,7 @@ export class FormProduct implements OnInit {
     this.dashboardService.obtenerEquipoDeUnaLiga(ligaId).subscribe({
       next: (data) => {
         this.equipo = data;
-        console.log(data)
+   
       },
       error: (err) => {
         console.log(err);

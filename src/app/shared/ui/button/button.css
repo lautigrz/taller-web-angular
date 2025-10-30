@@ -28,6 +28,7 @@
 .btn.secondary {
   background: #374151;
   color: #fff;
+  font-size: 1em;
 }
 
 .btn.secondary:hover {
@@ -38,7 +39,7 @@
   background: #3a6df0;
   color: #fff;
   width: 100%;
-  font-size: 1.1rem;
+  display: block;
 }
 
 .btn.cart:hover {
@@ -46,13 +47,14 @@
 }
 
 .btn.sm {
-  padding: 12px 15px;
-  font-size: 0.8rem;
+  padding: 10px 15px;
+  font-size: 0.70rem;
+  
 }
 
 .btn.md {
   padding: 10px 15px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .btn.lg {

@@ -108,6 +108,7 @@ body {
   --p-select-overlay-border-color: var(--bg-form-product);
   --p-select-option-color: var(--text-color);
   --p-select-color: var(--text-color);
+  --p-dialog-border-color:var(--bg-color);
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;

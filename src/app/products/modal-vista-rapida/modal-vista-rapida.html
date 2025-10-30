@@ -18,23 +18,12 @@
             <h3>{{producto()?.titulo}}</h3>
         </div>
 
-        <p class="product-card-price">{{producto()?.precio}}</p>
+        <p class="product-card-price">${{producto()?.precio}}</p>
         <p class="product-card-description">
         {{producto()?.descripcion}}
         </p>
 
-        <div class="product-card-options">
-
-            <div>
-                <h4>Talle disponibles</h4>
-                <div class="size-options">
-                    <button class="default">S</button>
-                    <button class="default">M</button>
-                    <button class="selected">L</button>
-                    <button class="default">XL</button>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
     <ng-template #footer>

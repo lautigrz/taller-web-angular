@@ -26,7 +26,7 @@ export class DashboardService {
     return this.http.get<Equipo[]>(`${this.baseUrl}${environment.getAllLiga}/${id}`)
   }
 
-  crearNuevoProducto(newProduct: ProductoFormValue) {
+  crearNuevoProducto(newProduct: ProductoFormValue) : Observable<any> {
     const formData = new FormData();
 
     formData.append('titulo', newProduct.titulo)

@@ -7,9 +7,9 @@
             <img [src]="getImageUrl(item.imagenes[0].url)"
                 alt="Camiseta Real Madrid">
             <div class="cart-item-info">
-                <h4>{{item.nombre}}</h4>
+                <h4>{{item.titulo}}</h4>
                 <p>Talle: {{item.talla}}</p>
-                <p>{{item.precio}}</p>
+                <p>${{item.precio}}</p>
             </div>
             <div class="cart-item-actions">
                 <input type="number" value="1">
@@ -24,9 +24,9 @@
     <div class="cart-footer">
         <div class="subtotal">
             <span>Subtotal</span>
-            <span>{{subTotal()}}</span>
+            <span>${{subTotal()}}</span>
         </div>
-        <app-button texto="Finalizar compra" size="lg" variant="cart"></app-button>
+        <app-button texto="Finalizar compra" size="md" variant="cart"></app-button>
     </div>
     }@else {
     <div class="container-cart-vacio">

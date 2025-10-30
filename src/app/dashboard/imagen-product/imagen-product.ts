@@ -49,6 +49,5 @@ export class ImagenProduct {
     this.form.get('imagen')?.setValue(archivosActualizados);
     this.cantidadSelect = archivosActualizados.length;
 
-    console.log(archivosActualizados)
   }
 }

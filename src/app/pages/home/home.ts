@@ -5,6 +5,7 @@ import { Footer } from '../../shared/layout/footer/footer';
 import { Producto, Products } from '../../products/models/product.interface';
 import { CartService } from '../../cart/data-access/cart.service';
 import { ProductsService } from '../../products/data-access/products.service';
+import { ProductStateService } from '../../core/data-access/product-state.service';
 
 @Component({
   selector: 'app-home',
@@ -15,23 +16,20 @@ import { ProductsService } from '../../products/data-access/products.service';
 export class Home implements OnInit {
 
   private prouctsService = inject(ProductsService)
-
-  products : Products[] = []
-  
- ngOnInit(): void {
-  this.prouctsService.getAllProducts().subscribe({
-    next: (data: Products[]) =>{
-      this.products = data;
-    },
-    error:(err) =>{
-
-    }
-  })
-}
-
-
-
+  private productsState = inject(ProductStateService);
+  products = this.productsState.products;
   cartService = inject(CartService)
+
+
+
+  ngOnInit(): void {
+    
+      this.productsState.loadProducts();
+    
+  }
+
+
+
 
 
 }

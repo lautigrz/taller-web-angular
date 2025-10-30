@@ -18,13 +18,15 @@
         </section>
 
         <section class="acciones">
-            <app-button texto="Cancelar" variant="secondary" size="sm"></app-button>
-            <app-button texto="Agregar producto" icon="material-symbols-outlined"
-             type="add"
-             (click)="onSubmit()"
-             ></app-button>
+            <app-button texto="Cancelar" variant="secondary"></app-button>
+            <app-button texto="Agregar producto" icon="material-symbols-outlined" type="add"
+                (click)="onSubmit()"></app-button>
         </section>
 
 
     </form>
 </main>
+@if (loading) {
+
+<app-loading-component></app-loading-component>
+}

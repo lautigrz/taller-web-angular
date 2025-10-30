@@ -123,6 +123,9 @@ body {
   color: var(--text-color);
   font-size: 15px;
   margin-bottom: 8px;
+  white-space: nowrap;    
+  overflow: hidden;           
+  text-overflow: ellipsis; 
   transition: color 0.3s ease;
 }
 

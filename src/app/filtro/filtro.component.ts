@@ -9,7 +9,7 @@ import { Filter } from './models';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './filtro.component.html',
-  styleUrl: './filtro.component.css'
+  styleUrls: ['./filtro.component.css']
 })
 export class FiltroComponent {
 

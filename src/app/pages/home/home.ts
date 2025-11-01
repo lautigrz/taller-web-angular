@@ -6,10 +6,11 @@ import { Producto, Products } from '../../products/models/product.interface';
 import { CartService } from '../../cart/data-access/cart.service';
 import { ProductsService } from '../../products/data-access/products.service';
 import { ProductStateService } from '../../core/data-access/product-state.service';
+import { FiltroComponent } from '../../filtro/filtro.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CardProducts],
+  imports: [CardProducts, FiltroComponent],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

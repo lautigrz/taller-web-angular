@@ -1,0 +1,53 @@
+.filtro-container {
+  width: 260px;
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  font-family: Poppins, sans-serif;
+}
+
+.grupo {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.talles button {
+  background: #2c2c2c;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.talles button.selected {
+  background: #007bff;
+}
+
+.btn-app,
+.btn-clear {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-app {
+  background: #0d6efd;
+  color: white;
+}
+
+.btn-clear {
+  background: #444;
+  color: white;
+}

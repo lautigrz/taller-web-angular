@@ -1,0 +1,44 @@
+<div class="filtro-container">
+
+  <h3>Filtros</h3>
+
+  <div class="grupo">
+    <label>Deporte</label>
+    <div><input type="radio" formControlName="deporte" value="futbol"> Fútbol</div>
+    <div><input type="radio" formControlName="deporte" value="basquet"> Básquet</div>
+    <div><input type="radio" formControlName="deporte" value="tenis"> Tenis</div>
+    <div><input type="radio" formControlName="deporte" value="running"> Running</div>
+  </div>
+
+  <div class="grupo">
+    <label>Categoría</label>
+    <div><input type="radio" formControlName="categoria" value="clubes"> Clubes</div>
+    <div><input type="radio" formControlName="categoria" value="selecciones"> Selecciones Nacionales</div>
+    <div><input type="radio" formControlName="categoria" value="especiales"> Ediciones Especiales</div>
+  </div>
+
+  <div class="grupo">
+    <label>Talle</label>
+    <div class="talles">
+      <button *ngFor="let t of tallesDisponibles"
+              type="button"
+              (click)="toggleTalle(t)"
+              [class.selected]="filtroForm.value.talles.includes(t)">
+        {{ t }}
+      </button>
+    </div>
+  </div>
+
+  <div class="grupo">
+    <label>Precio</label>
+    <input type="range" formControlName="precioMax" min="0" max="200">
+    <div class="rango">
+      <span>$0</span>
+      <span>${{ filtroForm.value.precioMax }}</span>
+    </div>
+  </div>
+
+  <button class="btn-app" (click)="aplicarFiltros()">Aplicar Filtros</button>
+  <button class="btn-clear" (click)="limpiarFiltros()">Limpiar</button>
+
+</div>

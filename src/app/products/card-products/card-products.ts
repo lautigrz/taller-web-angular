@@ -23,7 +23,8 @@ export class CardProducts {
 
   addProduct = output<Products>();
   selectedSize = new Map<number, string>();
-
+  rol = input<string>();
+  
   constructor(private messageService: MessageService) { }
   showSuccess(messgae: string, severity: string, summary: string) {
     this.messageService.add({ severity: severity, summary: summary, detail: messgae, key: 'br', life: 3000 });

@@ -7,7 +7,10 @@
     <h2 class="title">Camisetas de Fútbol</h2>
     <div class="cards-grid">
       @for (item of products(); track $index) {
-      <app-card-products [producto]="item" (addProduct)="cartService.addProduct($event)"></app-card-products>
+      <app-card-products [producto]="item" 
+      (addProduct)="cartService.addProduct($event)"
+      [rol]="rol"
+      ></app-card-products>
       }
     </div>
   </section>

@@ -109,6 +109,13 @@ body {
   --p-select-option-color: var(--text-color);
   --p-select-color: var(--text-color);
   --p-dialog-border-color:var(--bg-color);
+  --p-menu-background:var(--bg-color);
+  --p-menu-color:var(--text-color);
+  --p-menu-border-color:var(--bg-color);
+  --p-menu-submenu-label-color:var(--text-color);
+  --p-menu-item-color:var(--text-color);
+  --p-menu-item-focus-background:var(--bg-color);
+  --p-menu-item-focus-color:var(--text-color);
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;

@@ -3,6 +3,7 @@ export const environment = {
   apiUrl: 'http://localhost:3000',
   registerEndopint: '/auth/register',
   loginEndpoint: '/auth/login',
+  logoutEndpoint: '/auth/logout',
   emailCodePasswordEndpoint: '/auth/recover',
   verifyTokenEndpoint: '/auth/verify',
   updatePasswordEndpoint: '/auth/update-password',

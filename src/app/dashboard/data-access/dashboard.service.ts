@@ -19,11 +19,11 @@ export class DashboardService {
 
 
   obtenerLigas(): Observable<Liga[]> {
-    return this.http.get<Liga[]>(`${this.baseUrl}${environment.getAllLiga}`)
+    return this.http.get<Liga[]>(`${this.baseUrl}${environment.getAllLiga}`, {withCredentials: true})
   }
 
   obtenerEquipoDeUnaLiga(id: number): Observable<Equipo[]> {
-    return this.http.get<Equipo[]>(`${this.baseUrl}${environment.getAllLiga}/${id}`)
+    return this.http.get<Equipo[]>(`${this.baseUrl}${environment.getAllLiga}/${id}`,{withCredentials: true})
   }
 
   crearNuevoProducto(newProduct: ProductoFormValue) : Observable<any> {
@@ -43,7 +43,7 @@ export class DashboardService {
       formData.append('talla[]', talla)
     })
 
-    return this.http.post<any>(`${this.baseUrl}${environment.createProductEndpoint}`, formData)
+    return this.http.post<any>(`${this.baseUrl}${environment.createProductEndpoint}`, formData, {withCredentials: true})
 
   }
 

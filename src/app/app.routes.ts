@@ -14,5 +14,13 @@ export const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.routes').then(m => m.default)
   },
+  {
+    path: 'pay',
+    loadChildren: () => import('./pages/pay/pay/pay.routes').then(m => m.default)
+  },
+  {
+    path: 'thanks',
+    loadChildren: () => import('./pages/pay/thanks/thanks.routes').then(m => m.default)
+  },
   { path: '**', redirectTo: 'auth/log-in' },
 ];

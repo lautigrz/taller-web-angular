@@ -1,8 +1,8 @@
-import { HttpErrorResponse, HttpEvent, HttpHandlerFn, HttpInterceptorFn, HttpRequest } from "@angular/common/http";
+import { HttpEvent, HttpHandlerFn, HttpInterceptorFn, HttpRequest } from "@angular/common/http";
 import { AuthService } from "../../auth/data-acess/auth.service";
 import { catchError, Observable, switchMap, throwError } from "rxjs";
 import { inject } from "@angular/core";
-import { AuthStateService } from "../data-access/auth-state.service";
+
 
 export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<any>,
     next: HttpHandlerFn): Observable<HttpEvent<any>> => {

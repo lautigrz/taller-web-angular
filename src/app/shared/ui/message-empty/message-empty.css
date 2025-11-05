@@ -1,0 +1,20 @@
+.vacio {
+  text-align: center;
+  color: #666;
+  padding: 43px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+ 
+}
+
+.vacio .icon {
+  font-size: 50px;
+  color: #bbb;
+}
+
+.vacio p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}

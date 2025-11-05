@@ -21,6 +21,11 @@
   color: #fff;
 }
 
+.btn.delete {
+  background: #f31e1e;
+  color: #fff;
+}
+
 .btn.primary:hover {
   background: #275cee;
 }

@@ -1,6 +1,4 @@
-main{
-    height: auto; 
-}
+
 .container {
   width: 95%;
   max-width: 1400px;
@@ -43,6 +41,11 @@ main{
   transition: color 0.3s ease;
 }
 
+.title{
+    font-size: 20px;
+}
+
+
 .search-box-small input {
   width: 90%;
   padding: 0.5rem 1rem 0.5rem 2.5rem;
@@ -64,24 +67,4 @@ main{
   border-color: #3b82f6;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
 }
-}
-.vacio {
-  text-align: center;
-  color: #666;
-  padding: 40px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
- 
-}
-
-.vacio .icon {
-  font-size: 50px;
-  color: #bbb;
-}
-
-.vacio p {
-  font-size: 1.1rem;
-  font-weight: 500;
 }

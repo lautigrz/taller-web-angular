@@ -22,15 +22,17 @@
 
 
         <div class="actions">
-            @if (rol() === "CLIENTE" || rol() === "") {
+            @if (rol() === "CLIENTE" || !isLoggedIn()) {
             <app-button texto="Añadir al carrito" size="sm" icon="material-symbols-outlined" type="add_shopping_cart"
                 (click)="onAgregar()"></app-button>
-            }@else if (rol() === "ADMIN") {
-            <app-button texto="Eliminar" size="md" 
-            variant="delete" 
-            icon="material-symbols-outlined"
-             type="delete"
-                ></app-button>
+            }@else if (rol() === "ADMIN" && !modoHabilitar() && isLoggedIn()) {
+            <app-button texto="Deshabilitar" size="md" variant="delete" icon="material-symbols-outlined" type="cancel"
+                (click)="onDeshabilitar()">
+            </app-button>
+            }@else if (rol() === "ADMIN" && modoHabilitar() && isLoggedIn()) {
+                <app-button texto="Habilitar" size="md" icon="material-symbols-outlined" type="check_circle"
+                (click)="onHabilitar()">
+            </app-button>
             }
             <div class="product-card-options">
 

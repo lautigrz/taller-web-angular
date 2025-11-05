@@ -4,21 +4,19 @@
                     <span class="material-symbols-outlined search-icon">search</span>
                     <input type="text" placeholder="Buscar camisetas..." autocomplete="off" />
                 </div>
-    <h2 class="title">Camisetas de Fútbol</h2>
+    <h2 class="title">Productos deshabilitados</h2>
     <div class="cards-grid">
-      @if (products().length > 0) {
-      @for (item of products(); track $index) {
+    @if (products().length > 0) {
+        @for (item of products(); track $index) {
       <app-card-products [producto]="item" 
-      (addProduct)="cartService.addProduct($event)"
       [rol]="rol"
-      (deshabilitarProduct)="onDeshabilitarProducto($event)"
+      [modoHabilitar]="true"
       [isLoggedIn]="isLoggedIn"
+      (habilitarProduct)="onHabilitarProducto($event)"
       ></app-card-products>
       }
     }@else {
-     
-       <app-message-empty mensage="No hay productos actualmente."></app-message-empty>
-    
+       <app-message-empty mensage="No hay productos deshabilitados actualmente."></app-message-empty>
     }
     </div>
   </section>

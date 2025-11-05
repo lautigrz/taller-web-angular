@@ -24,8 +24,9 @@
   cursor: pointer;
   flex-shrink: 0;
   transition: all 0.2s ease;
-  background-color: #374151;
-  color: #d1d5db;
+  background-color: var(--check-size);
+  color: var(--check-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .size-btn input {

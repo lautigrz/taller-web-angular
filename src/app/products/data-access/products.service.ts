@@ -18,4 +18,16 @@ export class ProductsService {
     return this.httpClient.get<Products[]>(`${this.baseUrl}${environment.getAllProducts}`)
   }
 
+  deshabilitarProducto(id: number): Observable<any> {
+    return this.httpClient.put<any>(`${this.baseUrl}${environment.toChangeStateEndpoint}${id}`, {}, {withCredentials: true});
+  }
+
+  getAllProductsDisabled(): Observable<Products[]> {
+    return this.httpClient.get<Products[]>(`${this.baseUrl}${environment.getAllProductsDisabledEndpoint}`, {withCredentials: true});
+  }
+
+  habilitarProducto(id: number): Observable<any> {
+    return this.httpClient.put<any>(`${this.baseUrl}${environment.toChangeStateEndpoint}${id}`, {}, {withCredentials: true});
+  }
+
 }

@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { authGuard } from './guars/auth-guards-guard';
+import { Enable } from './pages/enable/enable';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,12 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.routes').then(m => m.default)
+  }, {
+    path: 'enabled',
+    component: Enable,
+    canActivate: [authGuard],
+    data: { expectedRole: 'ADMIN' }
   },
+
   { path: '**', redirectTo: 'auth/log-in' },
 ];

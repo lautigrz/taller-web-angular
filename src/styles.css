@@ -37,7 +37,8 @@
   --label-form-product: #484a4d;
   --bg-form-product: #ffffff;
   --form-placeholder: #6d727a;
-
+  --check-size:rgb(204, 204, 204);
+  --check-text:#4b4c4e;
 }
 
 .dark {
@@ -72,6 +73,8 @@
   --label-form-product: #d1d5db;
   --bg-form-product: #374151;
   --form-placeholder: #9ca3af;
+  --check-size:#374151;
+   --check-text:#d1d5db;
 
 }
 

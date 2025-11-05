@@ -11,5 +11,7 @@ export const environment = {
   refreshTokenEndpoint: '/auth/refresh',
   getAllProducts: '/productos/',
   getAllLiga: '/liga',
-  createProductEndpoint: '/productos/'
+  createProductEndpoint: '/productos/',
+  toChangeStateEndpoint: '/productos/change-state/',
+  getAllProductsDisabledEndpoint: '/productos/disabled-products'
 };

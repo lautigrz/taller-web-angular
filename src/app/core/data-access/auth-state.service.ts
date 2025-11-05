@@ -30,7 +30,7 @@ export class AuthStateService {
   clearUser() {
     this.userSubject.next(null);
     this.loggedSubject.next(false);
-    console.log("usuario limpiado");
+
   }
 
   get user(): Usuario | null{

@@ -14,26 +14,60 @@ export class Dropmenu implements OnInit {
   items: MenuItem[] | undefined;
   @ViewChild('menu') menu!: Menu;
   @Input() label: string = '';
+  @Input() rol : string = '';
   private authService = inject(AuthService);
   private router = inject(Router);
-  ngOnInit() {
+ngOnInit() {
+  if (this.rol === 'ADMIN') {
+    this.items = [
+      {
+        label: `Hola, ${this.label}`,
+        items: [
+          {
+            label: 'Lista de productos',
+            icon: 'pi pi-chart-bar',
+            command: () => this.router.navigate([''])
+          },
+          {
+            label: 'Nuevo producto',
+            icon: 'pi pi-chart-bar',
+            command: () => this.router.navigate(['/dashboard'])
+          },
+          {
+            label: 'Habilitar productos',
+            icon: 'pi pi-check-circle',
+            command: () => this.router.navigate(['/enabled'])
+          },
+          {
+            label: 'Cerrar sesión',
+            icon: 'pi pi-sign-out',
+            command: () => this.cerrarSesion()
+          }
+        ]
+      }
+    ];
+  } else {
+    // Usuario cliente
     this.items = [
       {
         label: `Hola, ${this.label}`,
         items: [
           {
             label: 'Mis pedidos',
-            icon: 'pi pi-refresh'
+            icon: 'pi pi-shopping-bag',
+            command: () => this.router.navigate(['/mis-pedidos'])
           },
           {
-            label: 'Cerrar sesion',
-            icon: 'pi pi-upload',
+            label: 'Cerrar sesión',
+            icon: 'pi pi-sign-out',
             command: () => this.cerrarSesion()
           }
         ]
       }
     ];
   }
+}
+
    abrirMenu(event: Event) {
     this.menu.toggle(event);
   }

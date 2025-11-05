@@ -34,7 +34,8 @@ export class Header {
     this.authState.user$.subscribe(user => {
       this.userName = user?.name ?? '';
       this.user = user;
-  
+      this.loginVisible = false;
+
     });
 
     console.log(this.user);
@@ -43,6 +44,7 @@ export class Header {
   handleUserMenuClick(event: Event) {
 
     if (this.isLoggedIn) {
+      this.dropmenu.rol = this.user?.rol ?? '';
       this.dropmenu.abrirMenu(event);
     } else {
       this.openLogin();
@@ -65,8 +67,5 @@ export class Header {
     this.openCart.emit();
   }
 
-  cerrarSesion() {
-
-  }
 
 }

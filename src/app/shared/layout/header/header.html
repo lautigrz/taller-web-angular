@@ -50,7 +50,7 @@
 </header>
 
 @if(userName){
-<app-dropmenu [label]="userName"></app-dropmenu>
+<app-dropmenu [label]="userName" [rol]="user?.rol!"></app-dropmenu>
 }
 @if(!isLoggedIn){
 <app-login [(visible)]="loginVisible" (visibleChange)="loginVisible = $event"></app-login>

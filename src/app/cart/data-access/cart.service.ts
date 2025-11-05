@@ -1,5 +1,6 @@
+import { Products } from './../../products/models/product.interface';
 import { Injectable, signal } from '@angular/core';
-import { Producto, Products } from '../../products/models/product.interface';
+import { Producto } from '../../products/models/product.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,13 @@ export class CartService {
     cart.splice(index, 1);
     this._cart.set(cart);
     localStorage.setItem(this.storageKey, JSON.stringify(cart));
+  }
+
+  clearCart(): void{
+    this._cart.set([]);
+
+    localStorage.removeItem(this.storageKey);
+
+    console.log("El carrito se ha vaciado.");
   }
 }

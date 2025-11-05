@@ -26,7 +26,7 @@
             <span>Subtotal</span>
             <span>${{subTotal()}}</span>
         </div>
-        <app-button texto="Finalizar compra" size="md" variant="cart"></app-button>
+        <app-button (click)="procederAlPago()" texto="Finalizar compra" size="md" variant="cart"></app-button>
     </div>
     }@else {
     <div class="container-cart-vacio">

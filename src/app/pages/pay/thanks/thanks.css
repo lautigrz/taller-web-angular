@@ -1,0 +1,236 @@
+
+        :root {
+
+            --color-primary: #0da6f2;
+            --color-background-light: #f5f7f8;
+            --color-background-dark: #101c22;
+            --color-text-dark: #111618;
+            --color-text-medium: #607c8a;
+            --color-gray-200: #e5e7eb;
+            --color-gray-700: #374151;
+            --color-white: #ffffff;
+
+
+            --font-display: 'Lexend', sans-serif;
+
+            /* Bordes */
+            --border-radius-lg: 0.5rem;
+            --border-radius-default: 0.25rem;
+        }
+
+        /* Estilos base del cuerpo */
+        body {
+            background-color: var(--color-background-light);
+            font-family: var(--font-display);
+            margin: 0;
+            padding: 0;
+            color: var(--color-text-dark); /* Color de texto por defecto */
+        }
+
+        /* Soporte para Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            body.dark {
+                background-color: var(--color-background-dark);
+                color: var(--color-white);
+            }
+            .dark .text-medium { color: #9ca3af; } /* dark:text-gray-400 */
+            .dark .text-dark { color: var(--color-white); }
+            .dark .bg-white { background-color: rgba(var(--color-background-dark), 0.5); } /* dark:bg-background-dark/50 */
+            .dark .border-gray { border-color: var(--color-gray-700); }
+            .dark .btn-secondary { background-color: rgba(var(--color-background-dark), 0.5); border-color: var(--color-gray-700); color: var(--color-white); }
+            .dark .btn-secondary:hover { background-color: #1f2937; } /* dark:hover:bg-gray-800 */
+        }
+
+        .layout-container {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .main-content {
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .main-content {
+                padding-left: 10rem;
+                padding-right: 10rem;
+            }
+        }
+
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 960px;
+            flex: 1;
+            gap: 2rem;
+        }
+
+        /* Encabezado Principal */
+        .header-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .icon-check {
+            font-size: 3rem;
+            color: var(--color-primary);
+        }
+
+        .title {
+            font-size: 2.25rem;
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: -0.033em;
+            color: var(--color-text-dark);
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--color-text-medium);
+        }
+
+        /* Bloque de Número de Pedido */
+        .order-info-container {
+            padding: 1rem;
+        }
+
+        .order-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 0 4px rgba(0,0,0,0.1);
+            background-color: var(--color-white);
+        }
+
+        .order-content {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .order-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: -0.015em;
+            color: var(--color-text-dark);
+        }
+
+        .order-number-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .order-number {
+            color: var(--color-primary);
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .copy-button {
+            padding: 0.25rem;
+            color: var(--color-text-medium);
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+        .copy-button:hover {
+            color: var(--color-primary);
+        }
+        .copy-icon {
+            font-size: 1.125rem;
+        }
+
+        /* Botones de Acción */
+
+        @media (min-width: 640px) {
+            .action-buttons {
+                flex-direction: row;
+            }
+        }
+
+        .btn-base {
+            display: flex;
+            min-width: 84px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: var(--border-radius-lg);
+            height: 3rem;
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.5;
+            letter-spacing: 0.015em;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: var(--color-background-light);
+            border: 1px solid var(--color-gray-200);
+            color: var(--color-text-dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Texto de ayuda */
+        .help-text {
+            color: var(--color-text-medium);
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.5;
+            padding-bottom: 0.75rem;
+            padding-top: 0.25rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            text-align: center;
+        }
+
+        .help-link {
+            text-decoration: underline;
+            color: var(--color-primary);
+        }

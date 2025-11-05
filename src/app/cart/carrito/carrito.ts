@@ -3,6 +3,7 @@ import { DrawerModule } from 'primeng/drawer';
 import { Button } from '../../shared/ui/button/button';
 import { CartService } from '../data-access/cart.service';
 import { Producto } from '../../products/models/product.interface';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-carrito',
@@ -14,7 +15,7 @@ export class Carrito {
   @Input() visible: boolean = false;
   @Output() visibleChange = new EventEmitter<boolean>();
 
-
+  router = inject(Router)
   cartService = inject(CartService);
   products = this.cartService.cart;
 
@@ -28,5 +29,20 @@ export class Carrito {
 
   getImageUrl(url: string){
     return `http://localhost:3000${url}`
+  }
+
+  closeDrawer(): void {
+    this.visibleChange.emit(false);
+  }
+
+  procederAlPago(): void {
+    const carritoData = {
+      productos: this.products(),
+      subTotal: this.subTotal(),
+    };
+
+    sessionStorage.setItem('carrito', JSON.stringify(carritoData));
+
+    this.router.navigate(['/pay']);
   }
 }

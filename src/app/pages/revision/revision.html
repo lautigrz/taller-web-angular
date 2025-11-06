@@ -1,0 +1,26 @@
+<main>
+<section class="revision-pago">
+     <h3 >Revisa y confirma tu pedido</h3>
+    <div class="articulo-revision">
+        
+        @for (item of products; track $index) {
+        <app-articulo [product]="item"></app-articulo>
+        }
+
+    </div>
+
+    <div class="datos-envio">
+        <app-envio></app-envio>
+    </div>
+
+</section>
+
+<section class="resumen">
+   <div class="container-resumen">
+     <app-resumen></app-resumen>
+    <div class="pagar">
+        <app-button texto="Pagar Ahora"size="md" variant="cart"></app-button>
+    </div>
+   </div>
+</section>
+</main>

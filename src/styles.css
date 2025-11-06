@@ -42,6 +42,7 @@
   --text-sumary: #555;
   --btn-disabled: #666666;
   --title-stepper: rgb(136, 136, 136);
+  --bg-form-resumen:rgb(243, 243, 243);
 }
 
 .dark {
@@ -81,7 +82,7 @@
   --text-sumary: #b6b6b6;
   --btn-disabled: #2e2e2e;
   --title-stepper: rgb(212, 212, 212);
-
+    --bg-form-resumen:rgb(27, 27, 27);
 }
 
 body {

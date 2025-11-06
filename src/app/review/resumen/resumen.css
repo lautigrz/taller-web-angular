@@ -1,0 +1,56 @@
+.resumen {
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+
+
+}
+
+.title-resumen {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.subtotal,
+
+.envio {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+.price {
+    font-weight: 500;
+}
+
+.text {
+    color: var(--form-placeholder);
+    font-weight: 400;
+    transition: color 0.3 ease;
+}
+
+.suma {
+    margin-top: 1em;
+    border-top: 1px solid #ccc;;
+    border-bottom: 1px solid #ccc;;
+    padding: 0 0 15px 0;
+}
+
+.total {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total>.text {
+
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.total>.price {
+    font-size: 1.2em;
+    font-weight: bold;
+}

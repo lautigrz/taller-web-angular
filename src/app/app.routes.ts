@@ -30,6 +30,10 @@ export const routes: Routes = [
     path: 'thanks',
     loadChildren: () => import('./pages/pay/thanks/thanks.routes').then(m => m.default)
   },
+   {
+    path: 'review',
+    loadChildren: () => import('./pages/revision/revision.routes').then(m => m.default)
+  },
   {
     path: '**',
     redirectTo: '',

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StepsBarra } from "../../../shared/ui/steps-barra/steps-barra";
+import { CartService } from '../../../cart/data-access/cart.service';
 
 @Component({
   selector: 'app-pay',
@@ -15,6 +16,7 @@ import { StepsBarra } from "../../../shared/ui/steps-barra/steps-barra";
 
 export class Pay implements OnInit {
   payment = inject(Payment)
+   cartService = inject(CartService);
   carrito: any = { productos: [], subTotal: 0 };
   impuestos = 19.20;
   envio = 0.00;
@@ -59,7 +61,8 @@ export class Pay implements OnInit {
   }
 
   confirmarPago() {
+    this.cartService.clearCart();
     this.router.navigate(["/thanks"]);
-    sessionStorage.removeItem('carrito');
+    
   }
 }

@@ -3,8 +3,8 @@
      <h3 >Revisa y confirma tu pedido</h3>
     <div class="articulo-revision">
         
-        @for (item of products; track $index) {
-        <app-articulo [product]="item"></app-articulo>
+        @for (item of products(); track $index) {
+        <app-articulo [product]="item" size="large"></app-articulo>
         }
 
     </div>

@@ -5,12 +5,20 @@
     border-bottom: 1px solid #ccc;
 
 }
-
 .articulo img {
+  border-radius: 10px;
+  margin-right: 20px;
+  height: auto;
+}
+
+.articulo.large img {
     width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    margin-right: 20px;
+
+}
+
+.articulo.small img {
+    width: 65px;
+
 }
 
 .info {
@@ -22,8 +30,16 @@
 }
 
 .title {
-    font-size: 1.1em;
+   
     font-weight: bold;
+}
+
+.title.small{
+ font-size: 0.8em;
+}
+
+.title.large{
+ font-size: 0.9em;
 }
 
 .talle {
@@ -33,9 +49,19 @@
 }
 
 .price {
-    font-size: 1.1em;
+   
     font-weight: 500;
 }
+
+.price.small{
+     font-size: 1em;
+     color: #0ea5e9;
+}
+
+.price.large{
+     font-size: 1.1em;
+}
+
 
 .price-delete {
     display: flex;

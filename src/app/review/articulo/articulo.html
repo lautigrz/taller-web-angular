@@ -1,14 +1,14 @@
 @if(product()){
-<div class="articulo">
-    <div class="img">
+<div class="articulo" [ngClass]="size">
+    <div class="img" >
         <img [src]="getImageUrl(product()!.imagenes[0].url)" alt="">
     </div>
     <div class="info">
-        <p class="title">{{product()?.titulo}}</p>
+        <p class="title" [ngClass]="size">{{product()?.titulo}}</p>
         <p class="talle">Talle {{product()?.talla}}</p>
         <div class="price-delete">
-            <p class="price">$ {{product()?.precio}}</p>
-            <span class="material-symbols-outlined">
+            <p class="price" [ngClass]="size">$ {{product()?.precio}}</p>
+            <span class="material-symbols-outlined" (click)="removeProduct(product()!.id)">
                 delete
             </span>
         </div>

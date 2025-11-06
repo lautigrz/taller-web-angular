@@ -8,10 +8,10 @@ import { Producto } from '../../products/models/product.interface';
 export class CartService {
   private storageKey = 'cart';
 
-  // señal con los productos del carrito
+
   private _cart = signal<Products[]>(JSON.parse(localStorage.getItem(this.storageKey) || '[]'));
 
-  cart = this._cart; // exportamos la señal
+  cart = this._cart; 
 
   getCart(): Products[] {
     return this._cart();
@@ -23,14 +23,15 @@ export class CartService {
     localStorage.setItem(this.storageKey, JSON.stringify(cart));
   }
 
-  removeProduct(index: number) {
-    const cart = [...this._cart()];
-    cart.splice(index, 1);
-    this._cart.set(cart);
-    localStorage.setItem(this.storageKey, JSON.stringify(cart));
+  removeProduct(id: number) {
+    const cart = this._cart(); 
+    const updatedCart = cart.filter(item => item.id !== id); 
+
+    this._cart.set(updatedCart); 
+    localStorage.setItem(this.storageKey, JSON.stringify(updatedCart));
   }
 
-  clearCart(): void{
+  clearCart(): void {
     this._cart.set([]);
 
     localStorage.removeItem(this.storageKey);

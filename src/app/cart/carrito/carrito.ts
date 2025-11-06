@@ -4,10 +4,11 @@ import { Button } from '../../shared/ui/button/button';
 import { CartService } from '../data-access/cart.service';
 import { Producto } from '../../products/models/product.interface';
 import { Router } from '@angular/router'
+import { Articulo } from "../../review/articulo/articulo";
 
 @Component({
   selector: 'app-carrito',
-  imports: [DrawerModule, Button],
+  imports: [DrawerModule, Button, Articulo],
   templateUrl: './carrito.html',
   styleUrl: './carrito.css'
 })
@@ -23,25 +24,19 @@ export class Carrito {
     this.products().reduce((sum, p) => sum + Number(p.precio), 0)
   );
 
-  removeProduct(index: number) {
-    this.cartService.removeProduct(index);
-  }
 
   getImageUrl(url: string) {
     return `http://localhost:3000${url}`
   }
 
-  closeDrawer(): void {
 
-
-  }
 
   procederAlPago(): void {
     const carritoData = {
       productos: this.products(),
       subTotal: this.subTotal(),
     };
-    
+
     this.visibleChange.emit(false);
     sessionStorage.setItem('carrito', JSON.stringify(carritoData));
 

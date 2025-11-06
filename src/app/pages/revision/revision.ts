@@ -16,9 +16,8 @@ export class Revision {
 
   private cartService = inject(CartService);
 
-  products: Products[] = [];
+  products = this.cartService.cart
 
-  constructor(){
-    this.products = this.cartService.getCart();
-  }
+  constructor() { }
+
 }

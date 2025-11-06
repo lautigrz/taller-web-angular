@@ -1,71 +1,27 @@
 :root {
   --primary: #0da6f2;
-  --bg-light: #f5f7f8;
-  --bg-dark: #101c22;
-  --text-light: #111618;
-  --text-dark: #ffffff;
+
+
 }
 
-body, .page-container {
-  font-family: 'Lexend', sans-serif;
-  background-color: var(--bg-light);
-  color: var(--text-light);
+body,
+.page-container {
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   min-height: 100vh;
+  transition: color 0.3s, background-color 0.3s;
 }
 
-/* Header */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: white;
-  border-bottom: 1px solid #ddd;
-}
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.header-left h2 {
-  font-weight: bold;
-}
-.logo-icon svg {
-  width: 24px;
-  height: 24px;
-  color: var(--primary);
-}
-.header-right button {
-  background: #f0f0f0;
-  border: none;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 18px;
-}
-.header-right button:hover {
-  background: #e0e0e0;
-}
-
-/* Breadcrumb */
 .breadcrumb {
-  text-align: center;
-  margin: 1.5rem 0;
-}
-.breadcrumb a {
-  color: gray;
-  text-decoration: none;
-}
-.breadcrumb .active {
-  font-weight: bold;
-  color: var(--text-light);
-}
-.breadcrumb span {
-  margin: 0 6px;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
 }
 
-/* Layout */
+
 .content {
   display: flex;
   flex-wrap: wrap;
@@ -73,51 +29,117 @@ body, .page-container {
   max-width: 1200px;
   margin: auto;
   padding: 1rem;
+
+
 }
+
 .shipping-form {
   flex: 1 1 60%;
   background: var(--bg-color);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 0.8em;
+  border: 1px solid var(--line-header);
+  transition: background 0.3s, color 0.3s;
 }
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 0;
+}
+
+.titles>p {
+  font-size: 1em;
+  font-weight: 500;
+
+}
+
 .summary {
   flex: 1 1 35%;
   background: var(--bg-color);
   padding: 2rem;
+  font-size: 0.9em;
   border-radius: 12px;
   height: fit-content;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid var(--line-header);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   position: sticky;
-  top: 2rem;
+  top: calc(70px + 1rem);
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Form */
+
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
+
 .form-grid label {
   display: flex;
   flex-direction: column;
 }
-.form-grid input, .form-grid select {
+
+.form-grid input,
+.form-grid select {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
 }
-.form-grid input:focus, .form-grid select:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 2px rgba(13,166,242,0.2);
+
+.btn-pago {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-/* Shipping options */
+.shipping-form h1 {
+  font-size: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+
+input::placeholder {
+  color: var(--form-placeholder);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="month"] {
+  background-color: var(--bg-color);
+  transition: background-color 0.3s;
+}
+
+select {
+  color: var(--form-placeholder);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(13, 166, 242, 0.2);
+}
+
+
 .shipping-options {
   margin-top: 1rem;
 }
+
+.shipping-options h2 {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
 .option {
   display: flex;
   align-items: center;
@@ -128,18 +150,24 @@ body, .page-container {
   cursor: pointer;
   transition: border 0.2s;
 }
+
 .option:hover {
   border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(13, 166, 242, 0.2);
 }
+
 .option input {
   margin-right: 1rem;
 }
+
 .option-info {
   flex-grow: 1;
 }
+
 .option span {
   font-weight: bold;
 }
+
 .alert {
   background: var(--bg-color);
   border-left: 4px solid #ffcc00;
@@ -149,13 +177,15 @@ body, .page-container {
   font-size: 0.9rem;
 }
 
-/* Summary */
+
 .summary-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
-  color: #555;
+  padding: 5px 0;
+  color: var(--text-sumary);
+  transition: color 0.3s;
 }
+
 .summary-total {
   display: flex;
   justify-content: space-between;
@@ -164,7 +194,6 @@ body, .page-container {
   margin-top: 1rem;
 }
 
-/* Buttons */
 .btn-primary {
   width: 100%;
   background-color: #0b8cd1;
@@ -181,12 +210,14 @@ body, .page-container {
   cursor: not-allowed;
   opacity: 0.6;
   background-color: #cccccc;
-  color: #666666;
+  color: var(--btn-disabled);
   border-color: #cccccc;
+  transition: color 0.3s;
 }
 
 .btn-secondary {
   display: block;
+  border: none;
   text-align: center;
   background: #f0f0f0;
   color: #333;
@@ -202,8 +233,6 @@ body, .page-container {
   background: #e0e0e0;
 }
 
-/*User-Data-Card*/
-/* Campos del formulario de pago */
 input[type="text"],
 input[type="month"],
 select {
@@ -212,6 +241,8 @@ select {
   border-radius: 8px;
   font-size: 1rem;
   width: 100%;
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 input[type="text"]:focus,
@@ -219,10 +250,18 @@ input[type="month"]:focus,
 select:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 2px rgba(13,166,242,0.2);
+  box-shadow: 0 0 0 2px rgba(13, 166, 242, 0.2);
 }
 
-/* Alerta de seguridad */
+
+input[type="radio"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(13, 166, 242, 0.2);
+}
+
+
 .alert {
   background: #fff8e1;
   border-left: 4px solid #ffcc00;
@@ -233,9 +272,6 @@ select:focus {
   margin-top: 1rem;
 }
 
-/*new*/
-
-/* Animaciones de transición */
 .slide {
   animation: slideIn 0.6s ease forwards;
   opacity: 0;
@@ -249,14 +285,25 @@ select:focus {
   }
 }
 
+.datos-pago {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-/* Responsive */
+
+
 @media (max-width: 768px) {
   .form-grid {
     grid-template-columns: 1fr;
   }
+
   .summary {
     position: relative;
     top: 0;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
   }
 }

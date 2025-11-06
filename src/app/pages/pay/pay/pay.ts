@@ -3,11 +3,12 @@ import { Payment } from '../../../pay/payment/payment';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StepsBarra } from "../../../shared/ui/steps-barra/steps-barra";
 
 @Component({
   selector: 'app-pay',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, StepsBarra],
   templateUrl: './pay.html',
   styleUrls: ['./pay.css']
 })

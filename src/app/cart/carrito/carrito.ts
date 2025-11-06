@@ -27,12 +27,13 @@ export class Carrito {
     this.cartService.removeProduct(index);
   }
 
-  getImageUrl(url: string){
+  getImageUrl(url: string) {
     return `http://localhost:3000${url}`
   }
 
   closeDrawer(): void {
-    this.visibleChange.emit(false);
+
+
   }
 
   procederAlPago(): void {
@@ -40,7 +41,8 @@ export class Carrito {
       productos: this.products(),
       subTotal: this.subTotal(),
     };
-
+    
+    this.visibleChange.emit(false);
     sessionStorage.setItem('carrito', JSON.stringify(carritoData));
 
     this.router.navigate(['/pay']);

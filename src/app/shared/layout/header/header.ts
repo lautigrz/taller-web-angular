@@ -7,6 +7,7 @@ import { CartService } from '../../../cart/data-access/cart.service';
 import { MenuItem } from 'primeng/api';
 
 import { Dropmenu } from "../../ui/dropmenu/dropmenu";
+import { UiService } from '../../data-access/ui.service';
 
 @Component({
   selector: 'app-header',
@@ -21,10 +22,13 @@ export class Header {
   userName: string | null = '';
   user: Usuario | null = null;
   items: MenuItem[] | undefined;
+ 
   @ViewChild(Dropmenu) dropmenu!: Dropmenu;
   @Output() openCart = new EventEmitter<void>();
 
   cartService = inject(CartService);
+  private uiService = inject(UiService)
+
   constructor(private authState: AuthStateService, private themeService: ThemeService) {
     this.isDark = document.documentElement.classList.contains('dark');
 
@@ -36,6 +40,9 @@ export class Header {
       this.user = user;
       this.loginVisible = false;
 
+    });
+    this.uiService.loginVisible$.subscribe(visible => {
+      this.loginVisible = visible;
     });
 
     console.log(this.user);

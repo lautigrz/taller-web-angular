@@ -19,7 +19,7 @@ export const routes: Routes = [
     path: 'enabled',
     component: Enable,
     canActivate: [authGuard],
-    data: { expectedRole: 'ADMIN' }
+    data: { roles: 'ADMIN' }
   },
 
   {

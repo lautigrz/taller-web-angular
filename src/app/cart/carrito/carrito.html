@@ -15,16 +15,11 @@
     <div class="cart-footer">
         <div class="subtotal">
             <span>Subtotal</span>
-            <span>${{subTotal()}}</span>
+            <span>${{cartService.subTotal()}}</span>
         </div>
         <app-button (click)="procederAlPago()" texto="Finalizar compra" size="md" variant="cart"></app-button>
     </div>
     }@else {
-    <div class="container-cart-vacio">
-        <h3>Ups, carrito vacio</h3>
-        <span class="material-symbols-outlined">
-            shopping_cart
-        </span>
-    </div>
+    <app-message-empty mensage="Ups, carrito vacio" icon="shopping_cart"></app-message-empty>
     }
 </p-drawer>

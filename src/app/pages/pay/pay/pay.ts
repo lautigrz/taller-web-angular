@@ -61,8 +61,8 @@ export class Pay implements OnInit {
   }
 
   confirmarPago() {
-    this.cartService.clearCart();
-    this.router.navigate(["/thanks"]);
+   
+    this.router.navigate(["/review"]);
     
   }
 }

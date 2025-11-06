@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CartService } from '../../cart/data-access/cart.service';
+
 
 @Component({
   selector: 'app-resumen',
@@ -7,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './resumen.css'
 })
 export class Resumen {
+  cartService = inject(CartService)
+ 
+
+
+
 
 }

@@ -1,5 +1,5 @@
 import { Products } from './../../products/models/product.interface';
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { Producto } from '../../products/models/product.interface';
 
 @Injectable({
@@ -16,6 +16,10 @@ export class CartService {
   getCart(): Products[] {
     return this._cart();
   }
+
+   subTotal = computed(() =>
+    this.cart().reduce((sum, p) => sum + Number(p.precio), 0)
+  );
 
   addProduct(product: Products) {
     const cart = [...this._cart(), product];

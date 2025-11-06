@@ -8,4 +8,5 @@ import { Component, input } from '@angular/core';
 })
 export class MessageEmpty {
   mensage = input<string>('');
+  icon = input<string>('');
 }

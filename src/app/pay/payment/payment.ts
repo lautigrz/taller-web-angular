@@ -21,16 +21,14 @@ export class Payment {
   products = this.cartService.cart;
 
   constructor() {
-    console.log('✅ Payment component cargado');
+
   }
 
   confirmarPago(): void {
     if (this.products().length === 0) {
-        console.error("El carrito está vacío. No se puede procesar el pago.");
-        return;
+      console.error("El carrito está vacío. No se puede procesar el pago.");
+      return;
     }
-
-    console.log("Procesando pago por:", this.carrito.subTotal());
 
     this.cartService.clearCart();
 

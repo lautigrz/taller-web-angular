@@ -1,17 +1,5 @@
 <main class="main">
   <div class="breadcrumb">
-    <!-- <span>Carrito /</span>
-    @if(pasoActual === 1){
-    <span class="active">Envío</span> <span>/</span>
-    }@else {
-    <span>Envío</span> <span>/</span>
-    }
-    @if (pasoActual ===2) {
-    <span class="active">Pago</span>
-    }@else {
-    <span>Pago</span>
-    } -->
-
     <app-steps-barra [activateStep]="pasoActual"></app-steps-barra>
   </div>
 
@@ -28,36 +16,6 @@
 
 
       <form class="form-grid" id="formAdress" (ngSubmit)="irAPago()" #formEnvio="ngForm">
-
-        <!--<label>
-                <span>Nombre completo</span>
-                <input type="text" placeholder="Nombre Completo" required>
-              </label>
-              <label>
-                <span>Calle y número</span>
-                <input type="text" placeholder="Av. Siempre Viva 742" required>
-              </label>
-              <label>
-                <span>Colonia</span>
-                <input type="text" placeholder="Springfield" required>
-              </label>
-              <label>
-                <span>Código Postal</span>
-                <input type="text" placeholder="12345" required>
-            </label>
-            <label>
-              <span>Ciudad</span>
-              <input type="text" placeholder="Buenos Aires" required>
-            </label>
-            <label>
-              <span>País</span>
-              <select>
-                <option>Argentina</option>
-                <option>Brasil</option>
-                <option>Chile</option>
-                <option>Uruguay</option>
-              </select>
-            </label>-->
         <label>
           <span>Nombre completo</span>
           <input type="text" placeholder="Nombre Completo" required name="nombre" ngModel>
@@ -93,32 +51,32 @@
       <div class="shipping-options">
         <h2>Elige tu método de envío</h2>
         <label class="option">
-          <input type="radio" name="shipping" [checked]="envio === 5" (change)="cambiarEnvio('standard')" checked>
+          <input type="radio" name="shipping" [checked]="envio === 5" (change)="cambiarEnvio('STANDARD')" checked>
           <div class="option-info">
             <p>Envío Estándar</p>
             <small>5-7 días hábiles</small>
           </div>
-          <span>$5.00</span>
+          <span>$4500.00</span>
         </label>
 
         <label class="option">
-          <input type="radio" name="shipping" [checked]="envio === 15" (change)="cambiarEnvio('express')">
+          <input type="radio" name="shipping" [checked]="envio === 15" (change)="cambiarEnvio('EXPRESS')">
           <div class="option-info">
             <p>Envío Express</p>
             <small>1-2 días hábiles</small>
           </div>
-          <span>$15.00</span>
+          <span>$8000.00</span>
         </label>
 
         <div class="alert">
-          ¡Envío Estándar gratis en pedidos superiores a $50!
+          ¡Envío Estándar gratis en pedidos superiores a $100.000!
         </div>
       </div>
     </section>
 
     <aside class="summary">
       <h2>Resumen de tu compra</h2>
-      <div class="summary-row"><span>Subtotal</span><span>${{ subtotal.toFixed(2) }}</span></div>
+      <div class="summary-row"><span>Subtotal</span><span>${{ cartService.subTotal() }}</span></div>
       <div class="summary-row"><span>Envío</span><span>${{ envio.toFixed(2) }}</span></div>
       <div class="summary-row"><span>Impuestos</span><span>${{ impuestos.toFixed(2) }}</span></div>
       <div class="summary-total">
@@ -179,7 +137,7 @@
 
     <aside class="summary">
       <h2>Resumen de tu compra</h2>
-      <div class="summary-row"><span>Subtotal</span><span>${{ subtotal.toFixed(2) }}</span></div>
+      <div class="summary-row"><span>Subtotal</span><span>${{ cartService.subTotal() }}</span></div>
       <div class="summary-row"><span>Envío</span><span>${{ envio.toFixed(2) }}</span></div>
       <div class="summary-row"><span>Impuestos</span><span>${{ impuestos.toFixed(2) }}</span></div>
       <div class="summary-total">

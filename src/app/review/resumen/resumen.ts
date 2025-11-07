@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
 import { CartService } from '../../cart/data-access/cart.service';
+import { Envio } from '../../pages/pay/models/envio';
 
 
 @Component({
@@ -10,8 +11,17 @@ import { CartService } from '../../cart/data-access/cart.service';
 })
 export class Resumen {
   cartService = inject(CartService)
- 
 
+  constructor() {
+
+  }
+
+  priceEnvio = computed(() => this.cartService.envio());
+
+  priceFinal = computed(() => {
+
+    return this.cartService.subTotal() + this.priceEnvio();
+  });
 
 
 

@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StepsBarra } from "../../../shared/ui/steps-barra/steps-barra";
 import { CartService } from '../../../cart/data-access/cart.service';
+import { Envio } from '../models/envio';
+
 
 @Component({
   selector: 'app-pay',
@@ -14,42 +16,44 @@ import { CartService } from '../../../cart/data-access/cart.service';
   styleUrls: ['./pay.css']
 })
 
-export class Pay implements OnInit {
+export class Pay {
   payment = inject(Payment)
-   cartService = inject(CartService);
-  carrito: any = { productos: [], subTotal: 0 };
+  cartService = inject(CartService);
+  metodo: Envio = Envio.STANDARD;
   impuestos = 19.20;
   envio = 0.00;
+
   pasoActual = 1;
   paisSeleccionado: string = 'argentina';
   router = inject(Router);
 
   constructor() {
-    console.log('✅ Pay component cargado');
-  }
 
-  ngOnInit() {
-    const data = sessionStorage.getItem('carrito');
-    if (data) {
-      this.carrito = JSON.parse(data);
-    }
-  }
-
-  get subtotal(): number {
-    return this.carrito.subTotal;
   }
 
   cambiarEnvio(metodo: string) {
-    if (metodo === 'express') {
-      this.envio = 15.00;
-    } else {
-      this.envio = this.subtotal > 50 ? 0.00 : 5.00;
+    if (metodo in Envio) {
+      this.metodo = Envio[metodo as keyof typeof Envio];
     }
+    if (this.cartService.subTotal() > 100000 && this.metodo === Envio.STANDARD) {
+      this.envio = 0;
+
+    } else if (this.metodo === Envio.EXPRESS) {
+      this.envio = 8000.00;
+
+
+    } else {
+
+      this.envio = 4500.00;
+    }
+
+    this.cartService.setMetodoEnvio(this.metodo);
   }
 
   get total(): number {
-    const envioFinal = this.subtotal >= 50 ? 0 : this.envio;
-    return this.subtotal + this.impuestos + envioFinal;
+    const envioFinal = this.cartService.subTotal() >= 100000 && this.metodo === Envio.STANDARD ? 0 : this.envio;
+    const total = this.cartService.subTotal() + this.impuestos + envioFinal;
+    return total;
   }
 
   irAPago() {
@@ -61,8 +65,8 @@ export class Pay implements OnInit {
   }
 
   confirmarPago() {
-   
+
     this.router.navigate(["/review"]);
-    
+
   }
 }

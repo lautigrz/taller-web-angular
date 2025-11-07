@@ -5,3 +5,10 @@ export interface CartItem {
   cantidad: number;
   subtotal: number;
 }
+
+
+export interface Total{
+  subtotal: number;
+  envio: number;
+  total: number;
+}

@@ -5,8 +5,8 @@ import { Products } from '../../products/models/product.interface';
 import { CartService } from '../../cart/data-access/cart.service';
 import { ProductsService } from '../../products/data-access/products.service';
 import { ProductStateService } from '../../core/data-access/product-state.service';
-import { AuthStateService } from '../../core/data-access/auth-state.service';
-import { MessageEmpty } from "../../shared/ui/message-empty/message-empty";
+import { FiltroComponent } from '../../filtro/filtro.component';
+
 
 @Component({
   selector: 'app-home',

@@ -3,8 +3,9 @@ import { BehaviorSubject } from 'rxjs';
 
 
 export interface Usuario {
-  email: string;
-  name?: string
+  email: string
+  name: string
+  rol: string
 }
 
 @Injectable({
@@ -22,15 +23,21 @@ export class AuthStateService {
   setUser(user: Usuario) {
     this.userSubject.next(user);
     this.loggedSubject.next(true);
+    console.log("asdasd",user);
   }
 
 
   clearUser() {
     this.userSubject.next(null);
     this.loggedSubject.next(false);
+
   }
 
   get user(): Usuario | null{
     return this.userSubject.value;
   }
+  get isAuthenticated(): boolean {
+  return this.loggedSubject.value;
+}
+
 }

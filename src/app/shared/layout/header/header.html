@@ -7,7 +7,10 @@
                     <h2 class="name-tienda">Sport Tees</h2>
                 </div>
             </div>
-            <app-navbar></app-navbar>
+       
+
+            <app-navbar [rol]="user?.rol!" [isLoggedIn]="isLoggedIn"></app-navbar>
+         
             <div class="header-right">
                 <div class="search-box">
                     <span class="material-symbols-outlined search-icon">search</span>
@@ -15,17 +18,20 @@
                 </div>
 
                 <div class="actions">
-                    <button (click)="openLogin()" class="action-btn">
+                    <button (click)="handleUserMenuClick($event)" class="action-btn">
                         <span class="material-symbols-outlined">person</span>
 
                     </button>
                     @if(!isLoggedIn){
                     <p class="ingresa">Ingresa</p>
                     }
+                    @if (user?.rol === "CLIENTE" || user == null) {
                     <button class="action-btn cart-btn" (click)="onCartClick()">
                         <span class="material-symbols-outlined">shopping_cart</span>
                         <span class="cart-badge" style="color: white;">{{cartService.getCart().length}}</span>
                     </button>
+                    }
+
                     <button (click)="toggleTheme()" class="action-btn">
                         @if (isDark) {
                         <span class="material-symbols-outlined">
@@ -43,6 +49,9 @@
     </div>
 </header>
 
+@if(userName){
+<app-dropmenu [label]="userName" [rol]="user?.rol!"></app-dropmenu>
+}
 @if(!isLoggedIn){
 <app-login [(visible)]="loginVisible" (visibleChange)="loginVisible = $event"></app-login>
 }

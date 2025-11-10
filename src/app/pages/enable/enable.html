@@ -1,0 +1,26 @@
+<main>
+  <section class="container">
+     <div class="search-box-small">
+                    <span class="material-symbols-outlined search-icon">search</span>
+                    <input type="text" placeholder="Buscar camisetas..." autocomplete="off" />
+                </div>
+    <h2 class="title">Productos deshabilitados</h2>
+    <div class="cards-grid">
+    @if (products().length > 0) {
+        @for (item of products(); track $index) {
+      <app-card-products [producto]="item" 
+      [rol]="rol"
+      [modoHabilitar]="true"
+      [isLoggedIn]="isLoggedIn"
+      (habilitarProduct)="onHabilitarProducto($event)"
+      ></app-card-products>
+      }
+    }@else {
+       <app-message-empty mensage="No hay productos deshabilitados actualmente."
+       icon="inventory_2"
+       >
+      </app-message-empty>
+    }
+    </div>
+  </section>
+</main>

@@ -1,0 +1,153 @@
+<main class="main">
+  <div class="breadcrumb">
+    <app-steps-barra [activateStep]="pasoActual"></app-steps-barra>
+  </div>
+
+  <div class="content">
+
+
+    @if(pasoActual === 1){
+    <section class="shipping-form">
+
+      <div class="titles">
+        <h1 class="">Dirección de Envío y Opciones de Entrega</h1>
+        <p>Introduce sus datos y elige tu método de envío preferido.</p>
+      </div>
+
+
+      <form class="form-grid" id="formAdress" (ngSubmit)="irAPago()" #formEnvio="ngForm">
+        <label>
+          <span>Nombre completo</span>
+          <input type="text" placeholder="Nombre Completo" required name="nombre" ngModel>
+        </label>
+        <label>
+          <span>Calle y número</span>
+          <input type="text" placeholder="Ej: Monroe 3121" required name="calle" ngModel>
+        </label>
+        <label>
+          <span>Localidad</span>
+          <input type="text" placeholder="Ej: San justo" required name="colonia" ngModel>
+        </label>
+        <label>
+          <span>Código Postal</span>
+          <input type="number" placeholder="Ej: 1754" required name="cp" ngModel>
+        </label>
+        <label>
+          <span>Ciudad</span>
+          <input type="text" placeholder="Buenos Aires" required name="ciudad" ngModel>
+        </label>
+        <label>
+          <span>País</span>
+          <select required name="pais" [(ngModel)]="paisSeleccionado">
+            <option value="argentina" selected>Argentina</option>
+            <option value="brasil">Brasil</option>
+            <option value="chile">Chile</option>
+            <option value="uruguay">Uruguay</option>
+          </select>
+        </label>
+      </form>
+
+
+      <div class="shipping-options">
+        <h2>Elige tu método de envío</h2>
+        <label class="option">
+          <input type="radio" name="shipping" [checked]="envio === 5" (change)="cambiarEnvio('STANDARD')" checked>
+          <div class="option-info">
+            <p>Envío Estándar</p>
+            <small>5-7 días hábiles</small>
+          </div>
+          <span>$4500.00</span>
+        </label>
+
+        <label class="option">
+          <input type="radio" name="shipping" [checked]="envio === 15" (change)="cambiarEnvio('EXPRESS')">
+          <div class="option-info">
+            <p>Envío Express</p>
+            <small>1-2 días hábiles</small>
+          </div>
+          <span>$8000.00</span>
+        </label>
+
+        <div class="alert">
+          ¡Envío Estándar gratis en pedidos superiores a $100.000!
+        </div>
+      </div>
+    </section>
+
+    <aside class="summary">
+      <h2>Resumen de tu compra</h2>
+      <div class="summary-row"><span>Subtotal</span><span>${{ cartService.subTotal() }}</span></div>
+      <div class="summary-row"><span>Envío</span><span>${{ envio.toFixed(2) }}</span></div>
+      <div class="summary-row"><span>Impuestos</span><span>${{ impuestos.toFixed(2) }}</span></div>
+      <div class="summary-total">
+        <span>Total</span>
+        <span>${{ total.toFixed(2) }}</span>
+      </div>
+
+      <button class="btn-primary" form="formAdress" [disabled]="!formEnvio.valid">Continuar al Pago</button>
+    </aside>
+    }@else{
+
+
+    <section class="shipping-form">
+      <h1>Detalles de Pago</h1>
+      <form class="form-grid" (ngSubmit)="confirmarPago()" id="formPago" #formPago="ngForm">
+        <label>
+          <span>Nombre en la tarjeta</span>
+          <input type="text" placeholder="Ej: Kevin Monroe" required name="nombreTarjeta" ngModel>
+        </label>
+
+        <label>
+          <span>Número de tarjeta</span>
+          <input type="text" maxlength="16" pattern="[0-9]{16}" placeholder="1234 5678 9012 3456" required
+            name="numeroTarjeta" ngModel>
+        </label>
+
+        <label>
+          <span>Fecha de expiración</span>
+          <input type="month" required name="expiracion" ngModel>
+        </label>
+
+        <label>
+          <span>CVV</span>
+          <input type="text" maxlength="4" pattern="[0-9]{3,4}" placeholder="123" required name="cvv" ngModel>
+        </label>
+
+        <label>
+          <span>Método de pago</span>
+          <select required name="metodoPago" ngModel>
+            <option value="" disabled selected>Selecciona un método de pago</option>
+            <option value="credit">Tarjeta de crédito</option>
+            <option value="debit">Tarjeta de débito</option>
+            <option value="mercadopago">Mercado Pago</option>
+            <option value="paypal">PayPal</option>
+          </select>
+        </label>
+
+
+        <div class="btn-pago">
+          <button type="button" class="btn-secondary" (click)="volverAEnvio()">Volver</button>
+          <button typeVerify="submit" class="btn-primary" [disabled]="!formPago.valid">Confirmar Pago</button>
+        </div>
+
+      </form>
+    </section>
+    }
+    @if(pasoActual ===2){
+
+    <aside class="summary">
+      <h2>Resumen de tu compra</h2>
+      <div class="summary-row"><span>Subtotal</span><span>${{ cartService.subTotal() }}</span></div>
+      <div class="summary-row"><span>Envío</span><span>${{ envio.toFixed(2) }}</span></div>
+      <div class="summary-row"><span>Impuestos</span><span>${{ impuestos.toFixed(2) }}</span></div>
+      <div class="summary-total">
+        <span>Total</span>
+        <span>${{ total.toFixed(2) }}</span>
+      </div>
+
+    </aside>
+    }
+
+  </div>
+
+</main>

@@ -1,0 +1,61 @@
+main {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 1200px;
+    margin-top: 1em;
+    flex:1;
+ 
+}
+
+.articulo-revision {
+
+    padding: 30px;
+}
+
+.revision-pago {
+    width: 60%;
+}
+.revision-pago h3{
+    margin-left: 1em;
+    font-size: 1.1;
+}
+
+
+.container-resumen {
+    display: flex;
+    padding: 0 0 40px 0;
+    height: 70%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--bg-form-resumen);
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.pagar {
+    width: 70%;
+}
+
+@media (max-width: 768px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 1em;
+
+    }
+
+    .revision-pago {
+        width: 100%;
+    }
+
+    .resumen{
+        width: 100%;
+    }
+}
+
+

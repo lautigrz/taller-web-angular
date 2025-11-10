@@ -3,6 +3,7 @@ export const environment = {
   apiUrl: 'http://localhost:3000',
   registerEndopint: '/auth/register',
   loginEndpoint: '/auth/login',
+  logoutEndpoint: '/auth/logout',
   emailCodePasswordEndpoint: '/auth/recover',
   verifyTokenEndpoint: '/auth/verify',
   updatePasswordEndpoint: '/auth/update-password',
@@ -10,5 +11,7 @@ export const environment = {
   refreshTokenEndpoint: '/auth/refresh',
   getAllProducts: '/productos/',
   getAllLiga: '/liga',
-  createProductEndpoint: '/productos/'
+  createProductEndpoint: '/productos/',
+  toChangeStateEndpoint: '/productos/change-state/',
+  getAllProductsDisabledEndpoint: '/productos/disabled-products'
 };

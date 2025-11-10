@@ -11,7 +11,7 @@
   right: 0;
   width: 320px;
   height: 100%;
-  background-color: #1f1f1f; /* bg-surface-dark */
+  background-color: #1f1f1f; 
   border-left: 1px solid #333;
   display: flex;
   flex-direction: column;
@@ -58,65 +58,6 @@
   gap: 1rem;
 }
 
-.cart-item {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.cart-item img {
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
-  border-radius: 0.375rem;
-}
-
-.cart-item-info h4 {
-  color: var(--text-color);
-  font-size: 0.845rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-.cart-item-info p {
-  margin: 0.125rem 0;
-  font-size: 0.75rem;
-  color: var(--cart-info-p);
-}
-
-.cart-item-info p:last-child {
-  color: #0ea5e9; /* primary */
-  font-weight: bold;
-  margin-top: 0.25rem;
-}
-
-.cart-item-actions {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.cart-item-actions input {
-  width: 48px;
-  text-align: center;
-  background-color: #333;
-  border: 1px solid #555;
-  border-radius: 0.375rem;
-  color: white;
-}
-
-.cart-item-actions button {
-  padding: 0.25rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--cart-info-p);
-  transition: color 0.3s;
-}
-
-.cart-item-actions button:hover {
-  color: #f87171; /* rojo */
-}
 
 .cart-footer {
   padding: 1rem;
@@ -181,55 +122,3 @@
   opacity: 1;
   pointer-events: auto;
 }
-
-.container-cart-vacio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 3rem 1rem;
-    gap: 1rem;
-
-
-    border-radius: 12px;
- 
-
-    max-width: 400px;
-    margin: 2rem auto;
-
-    animation: fadeIn 0.4s ease-in-out forwards;
-}
-
-.container-cart-vacio h3 {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    margin: 0;
-}
-.p-drawer-close-button :hover{
-  color:var(--bg-color);
-}
-
-
-:ng-deep .p-button-text.p-button-secondary:not(:disabled):hover{
-  background-color: var(--bg-color);
-}
-.container-cart-vacio span.material-symbols-outlined {
-    font-size: 3.5rem;
-    color: #8692fc;
-    padding: 0.8rem;
-    border-radius: 50%;
-}
-
-/* Animación suave */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-

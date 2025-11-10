@@ -1,0 +1,71 @@
+.vacio {
+  text-align: center;
+  color: #666;
+  padding: 43px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+ 
+}
+
+.vacio .icon {
+  font-size: 50px;
+  color: #bbb;
+}
+
+.vacio p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.container-cart-vacio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1rem;
+    gap: 1rem;
+
+
+    border-radius: 12px;
+ 
+
+    max-width: 400px;
+    margin: 2rem auto;
+
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.container-cart-vacio h3 {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin: 0;
+}
+.p-drawer-close-button :hover{
+  color:var(--bg-color);
+}
+
+
+:ng-deep .p-button-text.p-button-secondary:not(:disabled):hover{
+  background-color: var(--bg-color);
+}
+.container-cart-vacio span.material-symbols-outlined {
+    font-size: 3.5rem;
+    color: #8692fc;
+    padding: 0.8rem;
+    border-radius: 50%;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

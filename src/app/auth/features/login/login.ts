@@ -17,7 +17,7 @@ import { PasswordModule } from 'primeng/password';
 @Component({
   selector: 'app-login',
   imports: [Dialog, Button, InputTextModule, FloatLabel, ReactiveFormsModule,
-    CommonModule, ResetPassword, LoadingComponent,RouterModule,PasswordModule],
+    CommonModule, ResetPassword, LoadingComponent, RouterModule, PasswordModule],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
@@ -28,7 +28,7 @@ export class Login {
   @Output() visibleChange = new EventEmitter<boolean>();
   mostrarModal: boolean = false;
   loading = false;
- 
+
 
   private authService = inject(AuthService)
   private router = inject(Router)
@@ -49,12 +49,11 @@ export class Login {
 
       this.authService.login(user).subscribe({
         next: (user) => {
-          this.visible = false;
           this.loading = false;
         },
         error: (err) => {
           this.loading = false;
-          console.log(err)
+          this.mensajeError = "Credenciales incorrectas";
       
         }
       })
@@ -72,11 +71,11 @@ export class Login {
     this.mostrarModal = false;
   }
 
-goSignUp() {
-  this.mostrarModal = false;
-  this.visible = false;
-  this.router.navigate(['/auth/sign-up']);
-}
+  goSignUp() {
+    this.mostrarModal = false;
+    this.visible = false;
+    this.router.navigate(['/auth/sign-up']);
+  }
 
 
 }

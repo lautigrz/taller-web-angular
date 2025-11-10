@@ -20,8 +20,16 @@ export class ProductStateService {
     })
   }
    addProduct(newProduct: Products) {
-    console.log("se agrego", newProduct);
+    
     this.products.update((current) => [newProduct, ...current]);
+  }
+
+    loadProductsDisabled(){
+    this.productService.getAllProductsDisabled().subscribe({
+      next: (data: Products[]) => {
+        this.products.set(data);
+      }
+    })
   }
 
 }

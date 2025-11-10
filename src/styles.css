@@ -37,7 +37,12 @@
   --label-form-product: #484a4d;
   --bg-form-product: #ffffff;
   --form-placeholder: #6d727a;
-
+  --check-size: rgb(204, 204, 204);
+  --check-text: #4b4c4e;
+  --text-sumary: #555;
+  --btn-disabled: #666666;
+  --title-stepper: rgb(136, 136, 136);
+  --bg-form-resumen:rgb(243, 243, 243);
 }
 
 .dark {
@@ -72,7 +77,12 @@
   --label-form-product: #d1d5db;
   --bg-form-product: #374151;
   --form-placeholder: #9ca3af;
-
+  --check-size: #374151;
+  --check-text: #d1d5db;
+  --text-sumary: #b6b6b6;
+  --btn-disabled: #2e2e2e;
+  --title-stepper: rgb(212, 212, 212);
+    --bg-form-resumen:rgb(27, 27, 27);
 }
 
 body {
@@ -108,7 +118,16 @@ body {
   --p-select-overlay-border-color: var(--bg-form-product);
   --p-select-option-color: var(--text-color);
   --p-select-color: var(--text-color);
-  --p-dialog-border-color:var(--bg-color);
+  --p-dialog-border-color: var(--bg-color);
+  --p-menu-background: var(--bg-color);
+  --p-menu-color: var(--text-color);
+  --p-menu-border-color: var(--bg-color);
+  --p-menu-submenu-label-color: var(--text-color);
+  --p-menu-item-color: var(--text-color);
+  --p-menu-item-focus-background: var(--bg-color);
+  --p-menu-item-focus-color: var(--text-color);
+  --p-stepper-step-title-color: var(--title-stepper);
+
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;

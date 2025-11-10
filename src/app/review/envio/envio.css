@@ -1,0 +1,27 @@
+.envio {
+    padding: 40px 40px;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    gap: 10px;
+    background-color: var(--bg-form-resumen);
+    transition: background-color 0.3s ease;
+}
+
+.enviar-a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.title{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.info{
+    font-size: 1em;
+    color: var( --form-placeholder);
+    transition: color 0.3s ease;
+}

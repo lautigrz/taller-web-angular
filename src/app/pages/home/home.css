@@ -1,3 +1,4 @@
+
 /* Nuevo layout general */
 .layout {
   display: flex;
@@ -15,6 +16,9 @@
   height: fit-content;
 }
 
+main{
+    height: auto; 
+}
 
 .container {
   flex: 1;
@@ -55,6 +59,7 @@
     width: 100%;
   }
 
+
   .search-box-small {
     display: flex;
     justify-content: center;
@@ -88,3 +93,30 @@
     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
   }
 }
+=======
+.search-box-small input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+}
+.vacio {
+  text-align: center;
+  color: #666;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+ 
+}
+
+.vacio .icon {
+  font-size: 50px;
+  color: #bbb;
+}
+
+.vacio p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+

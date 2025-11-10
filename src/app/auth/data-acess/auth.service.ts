@@ -30,7 +30,7 @@ export class AuthService {
   }
 
   logout(): Observable<any> {
-    return this.http.post(`${this.baseUrl}/logout`, {}, { withCredentials: true })
+    return this.http.post(`${this.baseUrl}${environment.logoutEndpoint}`, {}, { withCredentials: true })
       .pipe(
         tap(() => this.authState.clearUser())
       );

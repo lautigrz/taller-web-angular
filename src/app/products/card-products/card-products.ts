@@ -1,5 +1,5 @@
 import { FormsModule } from '@angular/forms';
-import { Component, EventEmitter, input, output, Output } from '@angular/core';
+import { Component, input, output} from '@angular/core';
 import { Button } from '../../shared/ui/button/button';
 import { ModalVistaRapida } from '../modal-vista-rapida/modal-vista-rapida';
 import { Products } from '../models/product.interface';
@@ -20,10 +20,15 @@ export class CardProducts {
   quickViewVisible = false;
 
   producto = input<Products>();
-
+  deshabilitarProduct = output<Products>();
+  modoHabilitar = input<boolean>(false);
+  isLoggedIn = input<boolean>(false);
+  habilitarProduct = output<Products>();
   addProduct = output<Products>();
   selectedSize = new Map<number, string>();
 
+  rol = input<string>();
+  
   constructor(private messageService: MessageService) { }
   showSuccess(messgae: string, severity: string, summary: string) {
     this.messageService.add({ severity: severity, summary: summary, detail: messgae, key: 'br', life: 3000 });
@@ -65,4 +70,20 @@ export class CardProducts {
       ? `http://localhost:3000${this.producto()?.imagenes[0].url}`
       : '/assets/placeholder.png';
   }
+
+  onDeshabilitar(){
+    const producto = this.producto();
+    if(!producto) return
+
+    this.deshabilitarProduct.emit(producto);
+  }
+
+    onHabilitar(){
+    const producto = this.producto();
+    if(!producto) return
+
+    this.habilitarProduct.emit(producto);
+  }
+
+
 }

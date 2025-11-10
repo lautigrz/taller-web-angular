@@ -1,53 +1,127 @@
-.filtro-container {
-  width: 260px;
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 12px;
-  color: white;
-  font-family: Poppins, sans-serif;
-}
-
-.grupo {
-  margin-bottom: 18px;
-}
-
-label {
+:host {
   display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
+}
+
+/* Contenedor principal */
+.sidebar {
+  width: 260px;
+  background: #111215;
+  color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  font-family: 'Poppins', sans-serif;
+}
+
+.sidebar h2 {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Secciones */
+.section {
+  margin-bottom: 20px;
+}
+
+.section h3 {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #e6e6e6;
+}
+
+/* Radios */
+.radios {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.radios label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.radios input[type="radio"] {
+  accent-color: #1f6fff;
+}
+
+/* Botones de talles */
+.talles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .talles button {
   background: #2c2c2c;
   border: none;
-  color: white;
-  padding: 6px 12px;
-  margin: 4px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.talles button.selected {
-  background: #007bff;
-}
-
-.btn-app,
-.btn-clear {
-  width: 100%;
-  padding: 10px;
+  color: #eee;
+  padding: 8px 12px;
   border-radius: 8px;
-  margin-top: 10px;
   cursor: pointer;
   font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.talles button.active {
+  background: #1f6fff;
+  color: #fff;
+}
+
+/* Precio */
+input[type="range"] {
+  width: 100%;
+  accent-color: #1f6fff;
+}
+
+.precio-text {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: 14px;
+  color: #cfcfcf;
+}
+
+.precio-text span:last-child {
+  font-weight: 700;
+  color: #1f6fff;
+}
+
+/* Botones principales */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
   border: none;
+  cursor: pointer;
 }
 
-.btn-app {
-  background: #0d6efd;
-  color: white;
+.btn.primary {
+  background: #1f6fff;
+  color: #fff;
 }
 
-.btn-clear {
+.btn.secondary {
   background: #444;
-  color: white;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 100%;
+    border-radius: 10px;
+  }
 }

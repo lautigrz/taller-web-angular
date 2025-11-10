@@ -1,15 +1,17 @@
 <main>
-  <section class="container">
-     <div class="search-box-small">
-                    <span class="material-symbols-outlined search-icon">search</span>
-                    <input type="text" placeholder="Buscar camisetas..." autocomplete="off" />
-                </div>
-    <h2 class="title">Camisetas de Fútbol</h2>
-    <div class="cards-grid">
-      @for (item of products(); track $index) {
-      <app-card-products [producto]="item" (addProduct)="cartService.addProduct($event)"></app-card-products>
-      }
+  <section class="layout">
+    
+    <app-filtro class="filtro"></app-filtro>
+
+    
+    <div class="container">
+      <h2 class="title">Camisetas de Fútbol</h2>
+
+      <div class="cards-grid">
+        @for (item of products(); track $index) {
+          <app-card-products [producto]="item" (addProduct)="cartService.addProduct($event)"></app-card-products>
+        }
+      </div>
     </div>
   </section>
-  <app-filtro></app-filtro>
 </main>

@@ -1,41 +1,27 @@
 <main>
-
-  <section class="layout">
-    
-    <app-filtro class="filtro"></app-filtro>
-
-    
-    <div class="container">
-      <h2 class="title">Camisetas de Fútbol</h2>
-
-      <div class="cards-grid">
-        @for (item of products(); track $index) {
-          <app-card-products [producto]="item" (addProduct)="cartService.addProduct($event)"></app-card-products>
-        }
-      </div>
-
   <section class="container">
-     <div class="search-box-small">
-                    <span class="material-symbols-outlined search-icon">search</span>
-                    <input type="text" placeholder="Buscar camisetas..." autocomplete="off" />
-                </div>
-    <h2 class="title">Camisetas de Fútbol</h2>
+    <div class="search-box-small">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input type="text" placeholder="Buscar camisetas..." autocomplete="off" />
+
+    </div>
+    <div class="header-container">
+      <h2 class="title">Camisetas de Fútbol</h2>
+      <app-button texto="Filtro" icon="material-symbols-outlined" type="filter_alt" (click)="onFilterClick()">
+      </app-button>
+    </div>
     <div class="cards-grid">
       @if (products().length > 0) {
       @for (item of products(); track $index) {
-      <app-card-products [producto]="item" 
-      (addProduct)="cartService.addProduct($event)"
-      [rol]="rol"
-      (deshabilitarProduct)="onDeshabilitarProducto($event)"
-      [isLoggedIn]="isLoggedIn"
-      ></app-card-products>
+      <app-card-products [producto]="item" (addProduct)="cartService.addProduct($event)" [rol]="rol"
+        (deshabilitarProduct)="onDeshabilitarProducto($event)" [isLoggedIn]="isLoggedIn"></app-card-products>
       }
-    }@else {
-     
-       <app-message-empty mensage="No hay productos actualmente."></app-message-empty>
-    
-    }
+      }@else {
 
+      <app-message-empty mensage="No hay productos actualmente."></app-message-empty>
+
+      }
     </div>
   </section>
+  <app-filtro [visible]="isFilterOpen" (visibleChange)="isFilterOpen = $event"></app-filtro>
 </main>

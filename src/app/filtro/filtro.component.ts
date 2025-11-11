@@ -1,13 +1,14 @@
-import { Component, EventEmitter, Output, HostListener } from '@angular/core';
+import { Component, EventEmitter, Output, HostListener, Input } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FiltroService } from './filtro.service';
 import { Filter } from './models';
+import { DrawerModule } from 'primeng/drawer';
 
 @Component({
   selector: 'app-filtro',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, DrawerModule],
   templateUrl: './filtro.component.html',
   styleUrls: ['./filtro.component.css']
 })
@@ -17,7 +18,10 @@ export class FiltroComponent {
 
   filtroForm: FormGroup;
   tallesDisponibles = ['S', 'M', 'L', 'XL', 'XXL'];
-
+  visible2: boolean = false;
+  
+  @Input() visible: boolean = false;
+@Output() visibleChange = new EventEmitter<boolean>();
   sidebarVisible: boolean = true;
   isMobile: boolean = false;
 

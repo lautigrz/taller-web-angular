@@ -1,3 +1,7 @@
+<p-drawer header="Right Drawer" [(visible)]="visible"
+ position="right"
+ (visibleChange)="visibleChange.emit($event)"
+ >
 <div class="sidebar">
   <h2>Filtros</h2>
 
@@ -6,9 +10,6 @@
       <h3>Deporte</h3>
       <div class="radios">
         <label><input type="radio" formControlName="deporte" value="futbol" /> Fútbol</label>
-        <label><input type="radio" formControlName="deporte" value="basquet" /> Básquet</label>
-        <label><input type="radio" formControlName="deporte" value="tenis" /> Tenis</label>
-        <label><input type="radio" formControlName="deporte" value="running" /> Running</label>
       </div>
     </div>
 
@@ -48,3 +49,6 @@
     </div>
   </form>
 </div>
+</p-drawer>
+
+

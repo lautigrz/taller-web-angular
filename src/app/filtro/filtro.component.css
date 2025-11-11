@@ -1,10 +1,7 @@
-:host {
-  display: block;
-}
 
 /* Contenedor principal */
 .sidebar {
-  width: 260px;
+  width: 230px;
   background: #111215;
   color: #fff;
   padding: 20px;
@@ -118,10 +115,3 @@ input[type="range"] {
   color: #fff;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .sidebar {
-    width: 100%;
-    border-radius: 10px;
-  }
-}

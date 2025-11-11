@@ -35,6 +35,10 @@ export const routes: Routes = [
     loadChildren: () => import('./pages/revision/revision.routes').then(m => m.default)
   },
   {
+    path: 'pedidos',
+    loadChildren: () => import('./pedidos/pedidos.routes').then(m => m.default)
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'

@@ -6,7 +6,7 @@ import { Resumen } from "../../review/resumen/resumen";
 import { Button } from "../../shared/ui/button/button";
 import { MessageEmpty } from '../../shared/ui/message-empty/message-empty';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environments';
+import { PedidosService } from '../../pedidos/data-access/pedidos.service';
 
 @Component({
   selector: 'app-revision',
@@ -17,6 +17,7 @@ import { environment } from '../../../environments/environments';
 export class Revision {
 
   private cartService = inject(CartService);
+  private pedidosService = inject(PedidosService);
   private router = inject(Router);
 
   products = this.cartService.cart;
@@ -56,25 +57,14 @@ export class Revision {
       metodoEnvio: this.cartService.metodoEnvio()
     };
 
-    console.log('Pedido a enviar:', pedido);
-
-    fetch(`${environment.apiUrl}/pedidos`, {
-      method: 'POST',
-      credentials: 'include',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(pedido)
+    this.pedidosService.crearPedido(pedido).subscribe({
+      next: () => {
+        this.cartService.clearCart();
+        this.router.navigate(['/thanks']);
+      },
+      error: (err) => {
+        alert(`No se pudo crear el pedido: ${err?.message || JSON.stringify(err)}`);
+      }
     })
-    .then(async res => {
-      const body = await res.json();
-      if (!res.ok) throw body;
-      return body;
-    })
-    .then(data => {
-      this.cartService.clearCart();
-      this.router.navigate(['/thanks']);
-    })
-    .catch(err => {
-      alert(`No se pudo crear el pedido: ${err?.message || JSON.stringify(err)}`);
-    });
   }
 }

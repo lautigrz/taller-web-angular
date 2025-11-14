@@ -23,5 +23,17 @@
       }
     </div>
   </section>
-  <app-filtro [visible]="isFilterOpen" (visibleChange)="isFilterOpen = $event"></app-filtro>
+  <app-filtro [visible]="isFilterOpen"
+   (visibleChange)="isFilterOpen = $event"
+   (filtrosChange)="aplicarFiltros($event)"
+   >
+  </app-filtro>
+
+    <p-paginator (onPageChange)="onPageChange($event)" 
+    [first]="first" [rows]="rows" [totalRecords]="totalPage()" />
+
+    @if(loading()){
+      <app-loading-component></app-loading-component>
+    }
+
 </main>

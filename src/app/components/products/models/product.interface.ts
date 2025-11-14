@@ -1,9 +1,6 @@
-export interface Producto {
-    titulo: string
-    descripcion: string
-    precio: number
-    stock: number
-    imagenUrl: string
+export interface Data {
+    data: Products[];
+    meta: Meta;
 }
 
 
@@ -41,4 +38,13 @@ export interface Imagene {
     url:        string;
     orden:      number;
     productoId: number;
+}
+
+export interface Meta {
+    page:        number;
+    limit:       number;
+    total:       number;
+    totalPages:  number;
+    hasNextPage: boolean;
+    hasPrevPage: boolean;
 }

@@ -18,22 +18,17 @@ import { FiltroService } from './data-access/filtro.service';
 })
 export class FiltroComponent implements OnInit {
 
-  @Output() productosFiltrados = new EventEmitter<any[]>();
+  private filtroService = inject(FiltroService)
 
   filtroForm: FormGroup;
-  private filtroService = inject(FiltroService)
-  visible2: boolean = false;
-
   liga: Liga[] = []
   equipo: Equipo[] = [];
 
-  selectLiga: Liga | undefined;
-  selectEquipo: Equipo | undefined;
-
   @Input() visible: boolean = false;
   @Output() visibleChange = new EventEmitter<boolean>();
+  @Output() filtrosChange = new EventEmitter<any>();
+
   sidebarVisible: boolean = true;
-  isMobile: boolean = false;
   maximo = 120000;
   constructor(private fb: FormBuilder) {
     this.filtroForm = this.fb.group({
@@ -72,17 +67,6 @@ export class FiltroComponent implements OnInit {
   }
 
 
-  limpiarFiltros() {
-    this.filtroForm.reset({
-      deporte: '',
-      categoria: '',
-      talles: [],
-      precioMin: 0,
-      precioMax: 200
-    });
-  }
-
-
   get precioMax(): number {
     return this.filtroForm.get('precio')?.value ?? 200;
   }
@@ -91,8 +75,22 @@ export class FiltroComponent implements OnInit {
     this.sidebarVisible = !this.sidebarVisible;
   }
 
-  submit(){
+  submit() {
     console.log(this.filtroForm.value)
+    this.filtrosChange.emit(this.filtroForm.value);
+    this.visibleChange.emit(false);
+
+  }
+  limpiarFiltros() {
+    this.filtroForm.reset({
+      deporte: '',
+      categoria: '',
+      liga: '',
+      equipo: '',
+      precio: 0
+    });
+    this.filtrosChange.emit(this.filtroForm.value);
+    this.visibleChange.emit(false);
   }
 
 

@@ -42,7 +42,9 @@
   --text-sumary: #555;
   --btn-disabled: #666666;
   --title-stepper: rgb(136, 136, 136);
-  --bg-form-resumen:rgb(243, 243, 243);
+  --bg-form-resumen: rgb(243, 243, 243);
+  --hover-select-color: rgb(151, 151, 151);
+  --select-border-color: #392525
 }
 
 .dark {
@@ -82,7 +84,8 @@
   --text-sumary: #b6b6b6;
   --btn-disabled: #2e2e2e;
   --title-stepper: rgb(212, 212, 212);
-    --bg-form-resumen:rgb(27, 27, 27);
+  --bg-form-resumen: rgb(27, 27, 27);
+  --hover-select-color: rgb(126, 126, 126);
 }
 
 body {
@@ -127,13 +130,23 @@ body {
   --p-menu-item-focus-background: var(--bg-color);
   --p-menu-item-focus-color: var(--text-color);
   --p-stepper-step-title-color: var(--title-stepper);
-
+  --p-paginator-background: var(--bg-color);
+  --p-paginator-nav-button-focus-ring-color: rgb(247, 13, 13);
+  --p-paginator-nav-button-selected-background: var(--check-size);
+  --p-paginator-nav-button-selected-color: var(--text-color);
+  --p-paginator-nav-button-hover-background: none;
+  --p-paginator-nav-button-hover-color: var(--hover-select-color);
+  
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
 
-
+.p-paginator,
+.p-paginator-page-selected,
+.p-paginator-page {
+  transition: all 0.3s ease;
+}
 
 header {
   background-color: var(--header-bg);
@@ -163,4 +176,8 @@ footer {
 button:hover {
   background-color: var(--button-hover-bg);
   transition: background-color 0.3s, color 0.3s;
+}
+
+.p-select{
+  border: 1px solid var(--select-border-color) !important;
 }

@@ -1,4 +1,4 @@
-import { Producto, Products } from './../models/product.interface';
+import { Products } from './../models/product.interface';
 import { Component, EventEmitter, input, Input, Output } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 import { CarrouselImages } from '../carrousel-images/carrousel-images';

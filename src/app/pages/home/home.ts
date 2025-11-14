@@ -12,11 +12,13 @@ import { FiltroComponent } from '../../components/filtro/filtro.component';
 import { ProductsService } from '../../components/products/data-access/products.service';
 import { CartService } from '../../components/cart/data-access/cart.service';
 import { Products } from '../../components/products/models/product.interface';
+import { PaginatorModule, PaginatorState } from 'primeng/paginator';
+import { LoadingComponent } from "../../shared/ui/loading-component/loading-component";
 
 
 @Component({
   selector: 'app-home',
-  imports: [CardProducts, MessageEmpty, Button, FiltroComponent],
+  imports: [CardProducts, MessageEmpty, Button, FiltroComponent, PaginatorModule, LoadingComponent],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -29,10 +31,14 @@ export class Home implements OnInit {
   products = this.productsState.products;
   cartService = inject(CartService)
   isLoggedIn: boolean = false;
+  first: number = 1;
+  rows: number = 12;
+  loading = this.productsState.loading
+  totalPage = this.productsState.totalProducts;
 
   rol: string = '';
   isFilterOpen = false;
-
+  filtros: any = {};
 
   constructor() {
     this.authState.isLoggedIn$.subscribe(isLogged => {
@@ -45,6 +51,26 @@ export class Home implements OnInit {
       }
     }
     );
+
+    console.log(this.totalPage())
+  }
+
+  
+aplicarFiltros(filtros: any) {
+  this.filtros = filtros;
+
+
+  this.first = 0;
+
+  this.productsState.loadProducts(1, this.rows, this.filtros);
+}
+
+
+  onPageChange(event: PaginatorState) {
+    const page = (event.first! / event.rows!) + 1;
+    const limit = event.rows!;
+
+    this.productsState.loadProducts(page,limit);
   }
 
   onFilterClick() {

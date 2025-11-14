@@ -6,8 +6,9 @@
     </header>
 
      <div class="orders">
-      <div *ngFor="let pedido of filtrarPedidos()" class="order-card">
-        <div class="order-header">
+     @for (pedido of pedidos; track $index) {
+       <div class="order-card">
+           <div class="order-header">
           <div>
             <p class="order-id">PEDIDO #{{pedido.id}}</p>
             <p class="order-date">{{pedido.creadoEn | date:'dd MMMM yyyy'}}</p>
@@ -21,21 +22,34 @@
             {{pedido.estado || 'En proceso'}}
           </span>
         </div>
+      @for (producto of pedido.productos; track $index) {
+
+     
 
         <div class="order-body">
+          <div class="header-producto">
+            <h3 class="title">{{producto.producto.titulo}}</h3>
+          </div>
           <div class="order-images">
-            <img *ngFor="let prod of pedido.productos; let i = index"
-                 [src]="prod.producto.imagen || 'https://via.placeholder.com/80'"
-                 [alt]="prod.producto.titulo">
-            <div *ngIf="pedido.productos.length > 2" class="more-items">+{{pedido.productos.length - 2}}</div>
+            @for (imagen of producto.producto.imagenes; track $index) {
+              <img
+                 [src]="getImageUrl(
+                  imagen
+                 )"
+                 [alt]="producto.producto.titulo">
+            }
+           
           </div>
 
-          <div class="order-info">
-            <p class="total">Total: €{{pedido.total}}</p>
-            <button class="btn-primary">Ver Detalles</button>
-          </div>
+         
         </div>
-      </div>
+      }
+       <div class="order-info">
+            <p class="total">Total: ${{pedido.total}}</p>
+         
+          </div>
+    </div>
+     }
     </div>
   </main>
 </div>

@@ -3,7 +3,8 @@ import { CartService } from '../../cart/data-access/cart.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { Carrito } from '../../cart/carrito/carrito';
-import { Pay } from '../../pages/pay/pay/pay';
+import { Pay } from '../../../pages/pay/pay/pay';
+
 
 @Component({
   selector: 'app-payment',

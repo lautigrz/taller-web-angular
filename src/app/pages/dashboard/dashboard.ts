@@ -1,13 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { ImagenProduct } from '../../dashboard/imagen-product/imagen-product';
-import { FormProduct } from "../../dashboard/form-product/form-product";
-import { VarianteProduct } from "../../dashboard/variante-product/variante-product";
+
 import { Button } from "../../shared/ui/button/button";
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ProductoFormValue } from '../../dashboard/models/new-product.interface';
-import { DashboardService } from '../../dashboard/data-access/dashboard.service';
+
 import { LoadingComponent } from "../../shared/ui/loading-component/loading-component";
 import { ProductStateService } from '../../core/data-access/product-state.service';
+import { ImagenProduct } from '../../components/dashboard/imagen-product/imagen-product';
+import { FormProduct } from '../../components/dashboard/form-product/form-product';
+import { VarianteProduct } from '../../components/dashboard/variante-product/variante-product';
+import { DashboardService } from '../../components/dashboard/data-access/dashboard.service';
+import { ProductoFormValue } from '../../components/dashboard/models/new-product.interface';
 
 @Component({
   selector: 'app-dashboard',

@@ -1,22 +1,16 @@
 
-/* Contenedor principal */
 .sidebar {
-  width: 230px;
   background: #111215;
   color: #fff;
-  padding: 20px;
   border-radius: 16px;
+  padding: 16px;
+  width: 100%;
+  max-width: 350px;
+  height: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   font-family: 'Poppins', sans-serif;
 }
 
-.sidebar h2 {
-  margin: 0 0 20px 0;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-/* Secciones */
 .section {
   margin-bottom: 20px;
 }
@@ -27,7 +21,7 @@
   color: #e6e6e6;
 }
 
-/* Radios */
+
 .radios {
   display: flex;
   flex-direction: column;
@@ -47,7 +41,7 @@
   accent-color: #1f6fff;
 }
 
-/* Botones de talles */
+
 .talles {
   display: flex;
   flex-wrap: wrap;
@@ -70,7 +64,7 @@
   color: #fff;
 }
 
-/* Precio */
+
 input[type="range"] {
   width: 100%;
   accent-color: #1f6fff;
@@ -89,13 +83,28 @@ input[type="range"] {
   color: #1f6fff;
 }
 
-/* Botones principales */
+
 .actions {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 10px;
 }
+.selects {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
 
 .btn {
   padding: 10px 14px;
@@ -114,4 +123,3 @@ input[type="range"] {
   background: #444;
   color: #fff;
 }
-

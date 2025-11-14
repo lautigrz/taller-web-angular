@@ -9,10 +9,12 @@ main{
 }
 .title {
   color: var(--text-color);
-  font-size: 24px;
+  font-size: 1.2em;
 
   transition: color 0.3s ease;
 }
+
+
 
 .search-box-small{
   display: none;
@@ -22,6 +24,7 @@ main{
 .header-container{
   display: flex;
   justify-content: space-between;
+  align-items: center;
     margin-top: 10px;
   margin-bottom: 20px;
 }

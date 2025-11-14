@@ -1,11 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { Products } from '../../products/models/product.interface';
+
 import { ProductStateService } from '../../core/data-access/product-state.service';
-import { ProductsService } from '../../products/data-access/products.service';
-import { CartService } from '../../cart/data-access/cart.service';
+
+
 import { AuthStateService } from '../../core/data-access/auth-state.service';
-import { CardProducts } from "../../products/card-products/card-products";
+
 import { MessageEmpty } from "../../shared/ui/message-empty/message-empty";
+import { CardProducts } from '../../components/products/card-products/card-products';
+import { ProductsService } from '../../components/products/data-access/products.service';
+import { CartService } from '../../components/cart/data-access/cart.service';
+import { Products } from '../../components/products/models/product.interface';
 
 @Component({
   selector: 'app-enable',

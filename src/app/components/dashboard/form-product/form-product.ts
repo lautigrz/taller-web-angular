@@ -2,8 +2,8 @@ import { Component, inject, Input, OnInit } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardService } from '../data-access/dashboard.service';
 import { Select } from 'primeng/select';
-import { Liga } from '../models/liga.interface';
-import { Equipo } from '../models/equipo.interface';
+import { Liga } from '../../../models/liga.interface';
+import { Equipo } from '../../../models/equipo.interface';
 @Component({
   selector: 'app-form-product',
   imports: [ReactiveFormsModule, Select, FormsModule],

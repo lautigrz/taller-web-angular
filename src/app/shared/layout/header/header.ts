@@ -3,11 +3,12 @@ import { Navbar } from '../navbar/navbar';
 import { Login } from '../../../auth/features/login/login';
 import { ThemeService } from '../../../theme/theme.service';
 import { AuthStateService, Usuario } from '../../../core/data-access/auth-state.service';
-import { CartService } from '../../../cart/data-access/cart.service';
+
 import { MenuItem } from 'primeng/api';
 
 import { Dropmenu } from "../../ui/dropmenu/dropmenu";
 import { UiService } from '../../data-access/ui.service';
+import { CartService } from '../../../components/cart/data-access/cart.service';
 
 @Component({
   selector: 'app-header',

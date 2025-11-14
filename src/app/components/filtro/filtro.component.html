@@ -1,0 +1,61 @@
+<p-drawer 
+  header="Filtro" 
+  [(visible)]="visible"
+  position="right"
+  (visibleChange)="visibleChange.emit($event)"
+  class="drawer-container"
+>
+  <div class="sidebar">
+    <form [formGroup]="filtroForm">
+      <div class="section">
+        <h3>Deporte</h3>
+        <div class="radios">
+          <label><input type="radio" formControlName="deporte" value="futbol" /> Fútbol</label>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Categoría</h3>
+        <div class="radios">
+          <label><input type="radio" formControlName="categoria" value="clubes" /> Clubes</label>
+          <label><input type="radio" formControlName="categoria" value="selecciones" /> Selecciones Nacionales</label>
+          <label><input type="radio" formControlName="categoria" value="especiales" /> Ediciones Especiales</label>
+        </div>
+      </div>
+
+      <div class="selects" >
+    <div class="form-group">
+       <label for="product-league">Liga</label>
+      <p-select [options]="liga" 
+         formControlName="liga"
+      optionValue="id"
+      optionLabel="name" placeholder="Liga" (onChange)="ligaSelect()"/>
+      
+    </div>
+
+    <div class="form-group" >
+     <label for="product-team">Equipo</label>
+      <p-select [options]="equipo"
+      optionValue="id" 
+      formControlName="equipo"
+      optionLabel="name" placeholder="Equipo" emptyMessage="Elija una liga"  />
+      
+    </div>
+    </div>
+
+      <div class="section">
+        <h3>Precio</h3>
+        <input type="range" formControlName="precio" min="0" max="120000" />
+        <div class="precio-text">
+          <span>$0</span>
+          <span>${{ precioMax }}</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn primary" (click)="submit()" >Aplicar Filtros</button>
+        <button type="button" class="btn secondary" (click)="limpiarFiltros()">Limpiar</button>
+      </div>
+    </form>
+  </div>
+</p-drawer>

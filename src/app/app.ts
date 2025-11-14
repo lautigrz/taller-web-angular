@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './theme/theme.service';
 
 import { AuthService } from './auth/data-acess/auth.service';
-import { Carrito } from './cart/carrito/carrito';
+
 import { Header } from './shared/layout/header/header';
 import { Footer } from './shared/layout/footer/footer';
-import { CartService } from './cart/data-access/cart.service';
+import { Carrito } from './components/cart/carrito/carrito';
+
 
 @Component({
   selector: 'app-root',

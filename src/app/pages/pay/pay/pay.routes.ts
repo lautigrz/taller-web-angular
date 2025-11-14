@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { Payment } from '../../../pay/payment/payment'; // 👈 ruta corregida
+import { Payment } from '../../../components/pay/payment/payment';
+
 
 const routes: Routes = [
   {

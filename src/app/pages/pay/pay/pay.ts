@@ -1,11 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Payment } from '../../../pay/payment/payment';
+
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StepsBarra } from "../../../shared/ui/steps-barra/steps-barra";
-import { CartService } from '../../../cart/data-access/cart.service';
+
 import { Envio } from '../models/envio';
+import { Payment } from '../../../components/pay/payment/payment';
+import { CartService } from '../../../components/cart/data-access/cart.service';
 
 
 @Component({

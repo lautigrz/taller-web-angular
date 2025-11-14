@@ -1,14 +1,17 @@
-import { CardProducts } from './../../products/card-products/card-products';
+
 import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 
-import { Products } from '../../products/models/product.interface';
-import { CartService } from '../../cart/data-access/cart.service';
-import { ProductsService } from '../../products/data-access/products.service';
+
 import { ProductStateService } from '../../core/data-access/product-state.service';
-import { FiltroComponent } from '../../filtro/filtro.component';
+
 import { MessageEmpty } from '../../shared/ui/message-empty/message-empty';
 import { AuthStateService } from '../../core/data-access/auth-state.service';
 import { Button } from "../../shared/ui/button/button";
+import { CardProducts } from '../../components/products/card-products/card-products';
+import { FiltroComponent } from '../../components/filtro/filtro.component';
+import { ProductsService } from '../../components/products/data-access/products.service';
+import { CartService } from '../../components/cart/data-access/cart.service';
+import { Products } from '../../components/products/models/product.interface';
 
 
 @Component({

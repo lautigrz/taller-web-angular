@@ -1,11 +1,12 @@
 import { FormsModule } from '@angular/forms';
 import { Component, input, output} from '@angular/core';
-import { Button } from '../../shared/ui/button/button';
+
 import { ModalVistaRapida } from '../modal-vista-rapida/modal-vista-rapida';
 import { Products } from '../models/product.interface';
 import { Toast } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { SizeSelector } from '../size-selector/size-selector';
+import { Button } from '../../../shared/ui/button/button';
 
 
 @Component({

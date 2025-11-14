@@ -1,8 +1,8 @@
 import { Products } from './../../products/models/product.interface';
 import { computed, Injectable, signal } from '@angular/core';
-import { Producto } from '../../products/models/product.interface';
-import { Total } from '../carrito/models/cart.interface';
-import { Envio } from '../../pages/pay/models/envio';
+
+import { Envio } from '../../../pages/pay/models/envio';
+
 
 @Injectable({
   providedIn: 'root'

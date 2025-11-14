@@ -1,6 +1,6 @@
 import { Component, computed, inject, OnInit } from '@angular/core';
 import { CartService } from '../../cart/data-access/cart.service';
-import { Envio } from '../../pages/pay/models/envio';
+
 
 
 @Component({

@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { environment } from '../../../environments/environments';
+
 import { Observable } from 'rxjs';
-import { Liga } from '../models/liga.interface';
-import { Equipo } from '../models/equipo.interface';
+import { Liga } from '../../../models/liga.interface';
+import { Equipo } from '../../../models/equipo.interface';
 import { ProductoFormValue } from '../models/new-product.interface';
+import { environment } from '../../../../environments/environments';
 
 @Injectable({
   providedIn: 'root'

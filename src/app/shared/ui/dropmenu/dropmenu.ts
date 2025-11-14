@@ -55,7 +55,7 @@ ngOnInit() {
           {
             label: 'Mis pedidos',
             icon: 'pi pi-shopping-bag',
-            command: () => this.router.navigate(['/mis-pedidos'])
+            command: () => this.router.navigate(['/pedidos/mis-pedidos'])
           },
           {
             label: 'Cerrar sesión',
@@ -73,7 +73,7 @@ ngOnInit() {
   }
 
   cerrarSesion(){
-  
+
     this.authService.logout().subscribe({
       next: () => {
         this.router.navigate(['']);

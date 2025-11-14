@@ -1,0 +1,41 @@
+<div class="page">
+  <main class="main">
+    <header class="main-header">
+      <h1>Mis Pedidos</h1>
+      <input class="search" [(ngModel)]="searchTerm" placeholder="Buscar por número de pedido o producto">
+    </header>
+
+     <div class="orders">
+      <div *ngFor="let pedido of filtrarPedidos()" class="order-card">
+        <div class="order-header">
+          <div>
+            <p class="order-id">PEDIDO #{{pedido.id}}</p>
+            <p class="order-date">{{pedido.creadoEn | date:'dd MMMM yyyy'}}</p>
+          </div>
+          <span class="status" [ngClass]="{
+            'delivered': pedido.estado==='Entregado',
+            'in-process': pedido.estado==='En proceso',
+            'shipped': pedido.estado==='Enviado',
+            'cancelled': pedido.estado==='Cancelado'
+          }">
+            {{pedido.estado || 'En proceso'}}
+          </span>
+        </div>
+
+        <div class="order-body">
+          <div class="order-images">
+            <img *ngFor="let prod of pedido.productos; let i = index"
+                 [src]="prod.producto.imagen || 'https://via.placeholder.com/80'"
+                 [alt]="prod.producto.titulo">
+            <div *ngIf="pedido.productos.length > 2" class="more-items">+{{pedido.productos.length - 2}}</div>
+          </div>
+
+          <div class="order-info">
+            <p class="total">Total: €{{pedido.total}}</p>
+            <button class="btn-primary">Ver Detalles</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

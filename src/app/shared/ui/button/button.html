@@ -1,9 +1,8 @@
-<button class="btn" [ngClass]="[variant, size]">
+<button class="btn" [ngClass]="[variant, size]" [type]="type" (click)="handleClick()">
     @if(icon){
     <span class="{{icon}} i">
         {{type}}
     </span>
-
     }
     {{ texto }}
 </button>

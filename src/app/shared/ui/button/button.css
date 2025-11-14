@@ -26,6 +26,11 @@
   color: #fff;
 }
 
+.btn.filter {
+  background: #3f3f3f;
+  color: #fff;
+}
+
 .btn.primary:hover {
   background: #275cee;
 }

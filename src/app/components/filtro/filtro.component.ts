@@ -32,8 +32,6 @@ export class FiltroComponent implements OnInit {
   maximo = 120000;
   constructor(private fb: FormBuilder) {
     this.filtroForm = this.fb.group({
-      deporte: ['futbol'],
-      categoria: ['clubes'],
       liga: '',
       equipo: '',
       precio: [0]

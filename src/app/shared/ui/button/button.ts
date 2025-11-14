@@ -11,7 +11,7 @@ import { ButtonModule } from 'primeng/button';
 export class Button {
 
   @Input() texto: string = 'Button';
-  @Input() variant: 'primary' | 'secondary' | 'cart' | 'delete' = 'primary';
+  @Input() variant: 'primary' | 'secondary' | 'cart' | 'delete' | 'filter' = 'primary';
   @Input() icon?: string;
   @Input() type?: string;
   @Input() size: 'sm' | 'md' | 'lg' = 'md';

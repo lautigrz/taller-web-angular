@@ -38,12 +38,10 @@ export class Carrito {
   procederAlPago(): void {
 
     if (!this.authStateService.isAuthenticated) {
-         console.log("no autenticado")
       this.uiService.showLogin();
       return;
     }
 
-    console.log("autenticado")
     const carritoData = {
       productos: this.products(),
       subTotal: this.cartService.subTotal(),

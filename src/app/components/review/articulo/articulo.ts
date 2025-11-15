@@ -22,7 +22,6 @@ export class Articulo {
   }
 
   removeProduct(index: number) {
-    console.log("asdsa");
     this.cartService.removeProduct(index);
     
   }

@@ -7,7 +7,7 @@ import { Imagene } from '../models/product.interface';
   templateUrl: './carrousel-images.html',
   styleUrl: './carrousel-images.css'
 })
-export class CarrouselImages implements OnChanges {
+export class CarrouselImages{
    products: any[] | undefined;
 
    @Input() imagenes: Imagene[] = [];
@@ -40,11 +40,7 @@ export class CarrouselImages implements OnChanges {
       }
     ];
   }
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['imagenes'] && this.imagenes) {
-      console.log('Imagenes recibidas:', this.imagenes);
-    }
-  }
+
   getImageUrl(url: string){
     return `http://localhost:3000${url}`
   }

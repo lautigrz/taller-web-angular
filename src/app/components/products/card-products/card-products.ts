@@ -45,7 +45,6 @@ export class CardProducts {
   }
 
   onSizeChange(event: { productId: number, size: string }) {
-    console.log(event.productId, event.size)
     this.selectedSize.set(event.productId, event.size);
   }
 
@@ -59,7 +58,7 @@ export class CardProducts {
       prod.talla = size
       this.addProduct.emit(prod);
       this.showSuccess(prod.titulo,'success',"Producto agregado");
-      console.log(this.selectedSize, prod)
+
     } else {
        this.showSuccess("Debe elegir talla",'warn',"Error");
      

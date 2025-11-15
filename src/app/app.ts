@@ -22,10 +22,9 @@ export class App {
   constructor(private themeService: ThemeService, private authService: AuthService) {
     this.authService.verifyState().subscribe({
       next: user => {
-        console.log('Usuario verificado:');
       },
       error: err => {
-        console.log('No hay sesión activa:');
+  
       }
     });
 
@@ -36,6 +35,6 @@ export class App {
   }
     toggleCart() {
       this.cartVisible = !this.cartVisible;
-      console.log(this.cartVisible)
+     
   }
 }

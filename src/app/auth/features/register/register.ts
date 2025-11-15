@@ -10,6 +10,7 @@ import { RegisterUser } from '../../models/auth.interface';
 import { ConfirmDialogComponent } from "../../../shared/ui/confirm-dialog-component/confirm-dialog-component";
 import { LoadingComponent } from '../../../shared/ui/loading-component/loading-component';
 import { Button as Button } from "../../../shared/ui/button/button";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -35,7 +36,7 @@ export class Register {
 
 
   private authService = inject(AuthService)
-
+  private router = inject(Router);
   constructor(private fb: FormBuilder) {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
@@ -69,6 +70,9 @@ export class Register {
           this.dialogMessage = `¡Hola ${userName}, te has registrado correctamente!`
           this.dialogIcon = "fa-solid fa-circle-check"
           this.dialogVisible = true;
+         setTimeout(() =>{
+           this.router.navigate([""]);
+         }, 1500)
 
         },
         error: (err) => {

@@ -74,7 +74,7 @@ export class FiltroComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.filtroForm.value)
+   
     this.filtrosChange.emit(this.filtroForm.value);
     this.visibleChange.emit(false);
 

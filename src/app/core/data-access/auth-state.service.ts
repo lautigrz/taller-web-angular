@@ -23,7 +23,7 @@ export class AuthStateService {
   setUser(user: Usuario) {
     this.userSubject.next(user);
     this.loggedSubject.next(true);
-    console.log("asdasd",user);
+
   }
 
 

@@ -25,9 +25,7 @@ export class MisPedidos implements OnInit {
     this.pedidosService.obtenerPedidosUsuario().subscribe({
       next: (res: any) => {
         this.pedidos = res
-      
-
-        console.log(this.pedidos)
+    
       },
       error: (err) => console.error('Error al obtener pedidos', err)
     });
@@ -43,8 +41,7 @@ export class MisPedidos implements OnInit {
   }
 
     getImageUrl(url: any) {
-       console.log("daads")
-      console.log("url",url)
+
     return `http://localhost:3000${url.url}`
   }
 

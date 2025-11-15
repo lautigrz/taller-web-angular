@@ -52,7 +52,6 @@ export class Home implements OnInit {
     }
     );
 
-    console.log(this.totalPage())
   }
 
   
@@ -83,7 +82,7 @@ aplicarFiltros(filtros: any) {
   }
 
   onDeshabilitarProducto(producto: Products) {
-    console.log("Deshabilitar producto con id:", producto.id);
+
     this.productsService.deshabilitarProducto(producto.id).subscribe({
       next: () => {
 

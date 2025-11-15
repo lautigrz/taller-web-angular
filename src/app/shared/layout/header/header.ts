@@ -46,7 +46,7 @@ export class Header {
       this.loginVisible = visible;
     });
 
-    console.log(this.user);
+  
   }
 
   handleUserMenuClick(event: Event) {
